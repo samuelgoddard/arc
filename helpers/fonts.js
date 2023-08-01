@@ -6,11 +6,6 @@ export const Suisse = localFont({
       path: '../public/fonts/SuisseIntl-Book.woff2',
       weight: '400',
       style: 'normal',
-    },
-    {
-      path: '../public/fonts/SuisseIntl-SemiBold.woff2',
-      weight: '600',
-      style: 'bold',
     }
   ],
   subsets: ['latin'],

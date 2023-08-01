@@ -28,12 +28,13 @@ export default function Process() {
                 <div className="w-full border-b border-black pb-3 mb-3 relative z-[10]">
                   <div className="grid grid-cols-2">
                     <div className="col-span-2 lg:col-span-1 mb-6 lg:mb-0">
-                      <Image
-                        src="/images/process-01.png"
-                        width={1394}
-                        height={1428}
-                        className="w-full mix-blend-multiply"
-                      />
+                      <div className="rounded-tr-[50vw] lg:rounded-tr-[25vw] relative overflow-hidden h-[75vw] lg:h-[50vw] mix-blend-multiply">
+                        <Image
+                          src="/images/process-01.png"
+                          fill
+                          className="w-full absolute inset-0 h-full mix-blend-multiply object-center object-cover"
+                        />
+                      </div>
                     </div>
 
                     <div className="col-span-2 lg:col-span-1 flex lg:items-center lg:justify-center">
@@ -135,12 +136,20 @@ export default function Process() {
                       <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="bg-orange text-white p-2 px-4 rounded-full inline-block">Get in touch</a>
                     </div>
                     <div className="w-full lg:w-7/12 order-1 lg:order-2 mb-3 lg:mb-0">
-                      <Image
+                      {/* <Image
                         src="/images/process-02.png"
                         width={2082}
                         height={1486}
                         className="w-full mix-blend-multiply"
-                      />
+                      /> */}
+
+                      <div className="rounded-br-[50vw] lg:rounded-br-[25vw] relative overflow-hidden h-[68vw] lg:h-[40vw] mix-blend-multiply">
+                        <Image
+                          src="/images/process-02.png"
+                          fill
+                          className="w-full absolute inset-0 h-full mix-blend-multiply object-center object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>

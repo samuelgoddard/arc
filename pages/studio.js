@@ -26,7 +26,7 @@ export default function Studio() {
 
                   <div className="flex flex-wrap items-end w-[95%] lg:w-[80%]">
                     <div className="w-full lg:w-auto">
-                      <span className="bg-black/10 p-1 font-mono uppercase text-xs/none inline-block mb-3 lg:mb-0 mr-3">The Team</span>
+                      <span className="bg-black/10 p-1 font-mono uppercase text-xs/none inline-block mb-3 lg:mb-0 mr-28">The Team</span>
                     </div>
 
                     <div className="content flex-1">
@@ -37,10 +37,21 @@ export default function Studio() {
 
                 <div className="grid grid-cols-3 mb-3 border-b border-black">
                   {[...Array(8)].map((e, i) => {
+                    let shape = 'rounded-[50px]'
+                    
+                    i == 0 && (shape = 'rounded-bl-[200px]')
+                    i == 1 && (shape = 'rounded-[70px] rounded-br-[0%]')
+                    i == 2 && (shape = 'rounded-tr-[100px] rounded-bl-[100px] rounded-[0px]')
+                    i == 3 && (shape = 'rounded-tl-[150px] rounded-[0px]')
+                    i == 4 && (shape = 'rounded-t-[150px] rounded-[0px]')
+                    i == 5 && (shape = 'rounded-tr-[150px] rounded-[0px]')
+                    i == 6 && (shape = 'rounded-br-[150px] rounded-[0px]')
+                    i == 7 && (shape = 'rounded-tl-[150px] rounded-[0px]')
+
                     return (
                       <div key={i} className={`col-span-3 lg:col-span-1 border-b border-black pb-3 lg:pb-0 ${ (((i+1)%3) === 0) ? '' : 'lg:border-r' } ${i == 6 || i == 7 ? 'lg:border-b-0' : '' } ${i+1 == 8 ? 'border-b-0' : '' }`}>
                         <div className={`mb-3 lg:mb-[7vw] py-2 ${i == 0 || i == 3 || i == 6 ? 'lg:p-2 lg:pl-0' : 'lg:p-2' } ${i == 2 || i == 5 ? 'lg:pr-0 ' : '' }`}>
-                          <div className="w-full h-[45vw] lg:h-[17.5vw] bg-black/10"></div>
+                          <div className={`w-full h-[60vw] lg:h-[22vw] bg-black/10 ${shape} relative overflow-hidden`}></div>
                         </div>
                         <div className="w-11/12 lg:w-10/12 p-2">
                           <p className="text-lg lg:text-xl mb-3"><strong>Ewan Cassel</strong></p>
@@ -60,12 +71,20 @@ export default function Studio() {
 
                 <div className="flex flex-wrap">
                   <div className="w-full lg:w-8/12 lg:pr-3 mb-3 lg:mb-0">
-                    <Image
+                    {/* <Image
                       src="/images/studio-01.png"
                       width={2100}
                       height={1488}
                       className="w-full mix-blend-multiply"
-                    />
+                    /> */}
+
+                    <div className="rounded-tr-[30vw] lg:rounded-tr-[20vw] relative overflow-hidden h-[68vw] lg:h-[45vw] mix-blend-multiply">
+                      <Image
+                        src="/images/studio-01.png"
+                        fill
+                        className="w-full absolute inset-0 h-full mix-blend-multiply object-center object-cover"
+                      />
+                    </div>
                   </div>
                   <div className="flex-1 lg:border-l lg:border-black lg:pl-3 flex flex-col">
                     <div className="content w-full lg:w-2/3 max-w-[400px] mb-3 lg:mb-0">

@@ -72,12 +72,13 @@ export default function Home() {
                   <h1 className="text-[9.5vw]/[0.95] lg:text-[5.5vw]/[0.95] w-[100%] lg:w-[90%] mb-8 lg:mb-32">Creating a healthier, more sustainable relationship between people & place.</h1>
                   <div className="grid grid-cols-2">
                     <div className="col-span-2 lg:col-span-1 mb-6 lg:mb-0 bg-off-white">
+                      <div className="rounded-tl-[95vw] lg:rounded-tl-[50vw] relative overflow-hidden h-[95vw] lg:h-[50vw] mix-blend-multiply">
                       <Image
                         src="/images/home-01.png"
-                        width={1394}
-                        height={1428}
-                        className="w-full mix-blend-multiply"
+                        fill
+                        className="w-full absolute inset-0 h-full mix-blend-multiply object-center object-cover"
                       />
+                      </div>
                     </div>
 
                     <div className="col-span-2 lg:col-span-1 flex lg:items-center lg:justify-center">
@@ -139,12 +140,13 @@ export default function Home() {
 
                   <div className="flex items-end justify-end">
                     <div className="w-full lg:w-7/12">
-                      <Image
-                        src="/images/home-02.png"
-                        width={2082}
-                        height={1182}
-                        className="w-full mix-blend-multiply"
-                      />
+                      <div className="rounded-t-[45vw] lg:rounded-t-[32vw] relative overflow-hidden h-[45vw] lg:h-[32vw] mix-blend-multiply">
+                        <Image
+                          src="/images/home-02.png"
+                          fill
+                          className="w-full mix-blend-multiply absolute inset-0 object-center object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>

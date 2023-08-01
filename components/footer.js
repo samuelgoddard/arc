@@ -17,7 +17,7 @@ export default function Footer() {
 
                 <span className="hidden lg:block text-xs/none lg:text-xs/none translate-y-[3px]">&bull;</span>
 
-                <FancyLink destination="/" a11yText="Navigate to the Privacy policy page" label="Privacy Policy" className="block mb-2 lg:mb-0" />
+                <FancyLink destination="/privacy" a11yText="Navigate to the Privacy policy page" label="Privacy Policy" className="block mb-2 lg:mb-0" />
 
                 <span className="hidden lg:block text-xs/none lg:text-xs/none translate-y-[3px]">&bull;</span>
 
