@@ -71,7 +71,7 @@ export default function Home() {
                 <div className="w-full border-b border-black pb-3 mb-3 relative z-[10]">
                   <h1 className="text-[8vw]/[0.95] lg:text-[5.5vw]/[0.95] w-[95%] lg:w-[90%] mb-16 lg:mb-32">Creating a healthier, more sustainable relationship between people & place.</h1>
                   <div className="grid grid-cols-2">
-                    <div className="col-span-2 lg:col-span-1 mb-6 lg:mb-0">
+                    <div className="col-span-2 lg:col-span-1 mb-6 lg:mb-0 bg-off-white">
                       <Image
                         src="/images/home-01.png"
                         width={1394}

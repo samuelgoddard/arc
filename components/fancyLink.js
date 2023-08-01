@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-export default function FancyLink( {destination, a11yText, label, className, active} ) {
+export default function FancyLink( {destination, a11yText, label, className, active, onClick} ) {
   return (
-    <Link scroll={false} href={destination} aria-label={a11yText} className={`${className}`}>
+    <Link scroll={false} href={destination} aria-label={a11yText} className={`${className}`} onClick={onClick}>
       {label}
       
       {active && (
