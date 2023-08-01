@@ -17,7 +17,6 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-Suisse)', ...fontFamily.sans],
-        mono: ['var(--font-SuisseMono)', ...fontFamily.mono],
       },
       colors: {
         'black': '#000',

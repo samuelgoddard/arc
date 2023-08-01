@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { DefaultSeo } from 'next-seo'
 import SEO from '@/helpers/seo.config';
 import { Lenis as ReactLenis } from '@studio-freight/react-lenis'
-import { Suisse, SuisseMono } from '@/helpers/fonts';
+import { Suisse } from '@/helpers/fonts';
 import Header from '@/components/header';
 
 export default function App({ Component, pageProps }) {
@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }) {
     <ReactLenis root options={{ lerp: 0.125 }}>
       <DefaultSeo {...SEO} /> 
 
-      <div className={`${Suisse.variable} ${SuisseMono.variable} font-sans transition-colors ease-custom duration-[300ms] ${colorTheme}`}>
+      <div className={`${Suisse.variable} font-sans transition-colors ease-custom duration-[300ms] ${colorTheme}`}>
         <Header colorTheme={colorTheme} />
         
         <div className="grain"></div>
