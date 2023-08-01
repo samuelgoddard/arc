@@ -20,7 +20,7 @@ export default function Home() {
         >
           <main className="block">
             <Container>
-              <m.div variants={fade} className="h-[calc(100vh-16px)] w-full mb-3">
+              <m.div variants={fade} className="h-[calc(100vh-12px)] w-full mb-3">
                 <div className="w-full h-full border-b border-black relative flex items-start lg:items-center justify-center pt-24 lg:pt-0">
                   <div className="flex absolute top-[60vw] lg:top-[45%] left-0 right-0 w-full text-[14vw]/none lg:text-[8vw]/none text-white z-[10]">
                     <span className="block mr-auto">A</span>
