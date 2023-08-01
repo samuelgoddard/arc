@@ -22,10 +22,10 @@ export default function Studio() {
             <Container>
               <m.article variants={fade}>
                 <div className="border-b border-black pb-3">
-                  <h1 className="text-[8vw]/[0.95] lg:text-[5.5vw]/[0.95] w-[95%] lg:w-[80%] mb-16 lg:mb-[15vw]">A friendly, approachable team of architects, technicians, and construction experts.</h1>
+                  <h1 className="text-[10vw]/[0.95] lg:text-[5.5vw]/[0.95] w-[100%] lg:w-[80%] mb-16 lg:mb-[15vw]">A friendly, approachable team of architects, technicians, and construction experts.</h1>
 
                   <div className="flex flex-wrap items-end w-[95%] lg:w-[80%]">
-                    <div>
+                    <div className="w-full lg:w-auto">
                       <span className="bg-black/10 p-1 font-mono uppercase text-xs/none inline-block mb-3 lg:mb-0 mr-3">The Team</span>
                     </div>
 
@@ -55,7 +55,7 @@ export default function Studio() {
                 <div className="relative w-full mb-3 border-b border-black pb-3">
                   <span className="bg-black/10 p-1 font-mono uppercase text-xs/none mb-20 lg:mb-[13vw] inline-block">The Space</span>
 
-                  <h2 className="text-[5.5vw]/[0.95] lg:text-[3.5vw]/[0.95] w-[80%] lg:w-[82%] mb-0 pb-0">We share our spacious studio, the aptly-named ARC Space, with a host of local creative talent, to foster collaboration and community spirit.</h2>
+                  <h2 className="text-[7.5vw]/[0.95] lg:text-[3.5vw]/[0.95] w-[90%] lg:w-[82%] mb-0 pb-0">We share our spacious studio, the aptly-named ARC Space, with a host of local creative talent, to foster collaboration and community spirit.</h2>
                 </div>
 
                 <div className="flex flex-wrap">

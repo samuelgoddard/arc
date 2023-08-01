@@ -22,7 +22,7 @@ export default function Process() {
             <Container>
               <m.article variants={fade}>
                 <div className="w-full border-b border-black pb-3 mb-3">
-                  <h1 className="text-[8vw]/[0.9] lg:text-[5.5vw]/[0.9] w-[90%] lg:w-[90%]">Recognising the value of social engagement, we work to build consensus through a transparent, collaborative process.</h1>
+                  <h1 className="text-[10vw]/[0.9] lg:text-[5.5vw]/[0.9] w-[100%] lg:w-[90%]">Recognising the value of social engagement, we work to build consensus through a transparent, collaborative process.</h1>
                 </div>
 
                 <div className="w-full border-b border-black pb-3 mb-3 relative z-[10]">
@@ -52,7 +52,7 @@ export default function Process() {
 
                     <span className="bg-black/10 p-1 font-mono uppercase text-xs/none mb-8 lg:mb-10 inline-block">The Network</span>
 
-                    <h2 className="text-[6vw]/[0.95] lg:text-[4.5vw]/[0.95] w-[90%] lg:w-[50%] mb-5 lg:mb-8 pb-0">A joined-up approach to problem solving.</h2>
+                    <h2 className="text-[8vw]/[0.95] lg:text-[4.5vw]/[0.95] w-[90%] lg:w-[50%] mb-5 lg:mb-8 pb-0">A joined-up approach to problem solving.</h2>
 
                     <div className="w-full flex flex-wrap items-start">
                       <div className="w-full lg:w-5/12 order-2 lg:order-1 lg:pb-[15vw]">
@@ -95,7 +95,7 @@ export default function Process() {
                   <div className="relative w-full mb-3 border-b border-black pb-3">
                     <span className="bg-black/10 p-1 font-mono uppercase text-xs/none mb-20 lg:mb-[15vw] inline-block">The Response</span>
 
-                    <h2 className="text-[5.5vw]/[0.95] lg:text-[3.5vw]/[0.95] w-[90%] lg:w-[90%] mb-0 pb-0">We do not impose a templated, pre-defined approach on the work that we do. Instead, we look at each project afresh, with a series of focused appraisals that help to identity unique opportunities and constraints that will inform a considered response.</h2>
+                    <h2 className="text-[8vw]/[0.95] lg:text-[3.5vw]/[0.95] w-[95%] lg:w-[90%] mb-0 pb-0">We do not impose a templated, pre-defined approach on the work that we do. Instead, we look at each project afresh, with a series of focused appraisals that help to identity unique opportunities and constraints that will inform a considered response.</h2>
                   </div>
 
                   <div className="grid grid-cols-3 lg:gap-3 mb-3 lg:mb-3 border-b border-black">

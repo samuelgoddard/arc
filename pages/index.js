@@ -41,10 +41,10 @@ export default function Home() {
                   <span className="absolute bottom-3 left-0 w-[80%] max-w-[480px] text-base/tight hidden lg:block">ARC Design Studio is a RIBA Chartered architecture practice based in Nottingham, UK. We are a diverse community of thinkers, designers and makers.</span>
 
                   <div className="absolute bottom-3 left-0 lg:left-auto lg:right-0">
-                    <span className="block lg:hidden w-[80%] max-w-[480px] text-base/tight mb-8 lg:mb-0">ARC Design Studio is a RIBA Chartered architecture practice based in Nottingham, UK. We are a diverse community of thinkers, designers and makers.</span>
+                    <span className="block lg:hidden w-[85%] max-w-[480px] text-base/tight mb-8 lg:mb-0">ARC Design Studio is a RIBA Chartered architecture practice based in Nottingham, UK. We are a diverse community of thinkers, designers and makers.</span>
 
                     <div className="flex space-x-3 items-end mix-blend-color-burn">
-                      <div className="w-[100px] mix-blend-color-burn">
+                      <div className="w-[80px] lg:w-[100px] mix-blend-color-burn">
                         <Image
                           src="/images/riba.jpg"
                           width={174}
@@ -53,7 +53,7 @@ export default function Home() {
                           priority
                         />
                       </div>
-                      <div className="w-[140px] mb-[5px] mix-blend-color-burn">
+                      <div className="w-[120px] lg:w-[140px] mb-[5px] mix-blend-color-burn">
                         <Image
                           src="/images/arb.jpg"
                           width={250}
@@ -69,7 +69,7 @@ export default function Home() {
               
               <m.article variants={fade} className="w-full">
                 <div className="w-full border-b border-black pb-3 mb-3 relative z-[10]">
-                  <h1 className="text-[8vw]/[0.95] lg:text-[5.5vw]/[0.95] w-[95%] lg:w-[90%] mb-16 lg:mb-32">Creating a healthier, more sustainable relationship between people & place.</h1>
+                  <h1 className="text-[9.5vw]/[0.95] lg:text-[5.5vw]/[0.95] w-[100%] lg:w-[90%] mb-8 lg:mb-32">Creating a healthier, more sustainable relationship between people & place.</h1>
                   <div className="grid grid-cols-2">
                     <div className="col-span-2 lg:col-span-1 mb-6 lg:mb-0 bg-off-white">
                       <Image
@@ -97,7 +97,7 @@ export default function Home() {
                   <div className="relative w-full mb-3 border-b border-black pb-3">
                     <span className="bg-black/10 p-1 font-mono uppercase text-xs/none mb-20 lg:mb-[15vw] inline-block">Overview</span>
 
-                    <h2 className="text-[5.5vw]/[0.95] lg:text-[3.5vw]/[0.95] w-[80%] lg:w-[82%] mb-0 pb-0">ARC Design Studio was founded on the simple idea that architecture can be both ambitious, and used as a tool for the common good.</h2>
+                    <h2 className="text-[7.5vw]/[0.95] lg:text-[3.5vw]/[0.95] w-[80%] lg:w-[82%] mb-0 pb-0">ARC Design Studio was founded on the simple idea that architecture can be both ambitious, and used as a tool for the common good.</h2>
                     <span className="block absolute bottom-3 right-0 text-orange w-[10vw] lg:w-[15.5vw] z-0">
                     <svg className="w-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 238 587">
                       <path fill="currentColor" d="M237.846 587H126.204V148.522H0V72.476c84.945-2.427 124.586-8.09 152.901-72.001h84.945V587Z"/>
