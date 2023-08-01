@@ -1,12 +1,12 @@
 export default {
-  defaultTitle: 'Boilerplate | Next x Tailwind x Motion',
-  description: 'A simple Next.js starter kit with Tailwind and Framer Motion.',
-  titleTemplate: '%s | Next x Tailwind x Motion',
+  defaultTitle: 'Arc Design Studio',
+  description: 'ARC Design Studio is a RIBA Chartered architecture practice based in Nottingham, UK. We are a diverse community of thinkers, designers and makers.',
+  titleTemplate: '%s | Arc Design Studio',
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://sg-next-tailwind-motion.vercel.app/',
-    site_name: 'Next x Tailwind x Motion',
+    url: 'https://arc-design-studio.vercel.app/',
+    site_name: 'Arc Design Studio',
   },
   twitter: {
     handle: '@samuelgoddard',

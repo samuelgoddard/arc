@@ -53,12 +53,14 @@ export default function Privacy() {
 
                 <div className="flex flex-wrap">
                   <div className="w-full lg:w-8/12 lg:pr-3 mb-3 lg:mb-0">
-                    <Image
-                      src="/images/studio-01.png"
-                      width={2100}
-                      height={1488}
-                      className="w-full mix-blend-multiply"
-                    />
+                    <div className="rounded-br-[50vw] lg:rounded-br-[25vw] relative overflow-hidden h-[68vw] lg:h-[40vw] mix-blend-multiply bg-black/5">
+                      <Image
+                        src="/images/process-02.png"
+                        quality={20}
+                        fill
+                        className="w-full absolute inset-0 h-full mix-blend-multiply object-center object-cover"
+                      />
+                    </div>
                   </div>
                   <div className="flex-1 lg:border-l lg:border-black lg:pl-3 flex flex-col">
                     <div className="content w-full lg:w-2/3 max-w-[400px] mb-3 lg:mb-0">

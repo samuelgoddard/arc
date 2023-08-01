@@ -31,11 +31,9 @@ export default function Header({ colorTheme }) {
       <header className={`py-3 border-b border-black fixed top-0 left-0 right-0 w-full z-[999] transition-colors ease-custom duration-[300ms] ${colorTheme}`}>
         <Container>
           <div className="flex flex-wrap items-center">
-            <Link scroll={false} href="/" className="flex space-x-1 items-end mr-auto group">
+            <Link scroll={false} href="/" className="flex space-x-1 items-end mr-auto">
               <IconLogo className="w-[25px] lg:w-[28px]" />
-              <div className="block relative overflow-hidden">
-                <span className="block text-base/[1.075] lg:text-xl/[1.075] leading-[1.075] translate-y-full group-hover:translate-y-0 transition-transform ease-custom duration-[300ms] will-change-transform">Arc Design Studio</span>
-              </div>
+              <span className="block text-base/none lg:text-xl/none  leading-none">Arc Design Studio</span>
             </Link>
 
             <div className="mx-auto flex space-x-1 text-base/none lg:text-xl/none translate-x-[62px]">
@@ -100,11 +98,12 @@ export default function Header({ colorTheme }) {
                     </form>
                   </div>
                 </div>
-                <div className="col-span-2 lg:col-span-1 hidden lg:block">
+                <div className="col-span-2 lg:col-span-1 hidden lg:block bg-black/10">
                   <Image
                     src="/images/map.jpg"
-                    width={970}
-                    height={1158}
+                    width={970/2}
+                    height={1158/2}
+                    quality={50}
                     className="w-full"
                   />
                 </div>

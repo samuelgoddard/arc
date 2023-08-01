@@ -78,10 +78,12 @@ export default function Studio() {
                       className="w-full mix-blend-multiply"
                     /> */}
 
-                    <div className="rounded-tr-[30vw] lg:rounded-tr-[20vw] relative overflow-hidden h-[68vw] lg:h-[45vw] mix-blend-multiply">
+                    <div className="rounded-tr-[30vw] lg:rounded-tr-[20vw] relative overflow-hidden h-[68vw] lg:h-[45vw] mix-blend-multiply bg-black/5">
                       <Image
                         src="/images/studio-01.png"
                         fill
+                        quality={20}
+                        alt="All of the members of the Arc Design Studio team"
                         className="w-full absolute inset-0 h-full mix-blend-multiply object-center object-cover"
                       />
                     </div>

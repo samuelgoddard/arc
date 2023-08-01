@@ -31,8 +31,10 @@ export default function Home() {
                   <div className="w-[90vw] lg:w-[55vw] max-w-[85vh] lg:translate-y-[-3vw] z-[1]">
                     <Image
                       src="/images/hero-home.png"
-                      width={1570}
-                      height={1352}
+                      width={1570/2}
+                      height={1352/2}
+                      quality={20}
+                      alt="Arc Triangle"
                       className="w-full will-change-transform"
                       priority
                     />
@@ -50,6 +52,8 @@ export default function Home() {
                           width={174}
                           height={82}
                           className="w-full"
+                          quality={30}
+                          alt="RIBA accrediation logo"
                           priority
                         />
                       </div>
@@ -59,6 +63,8 @@ export default function Home() {
                           width={250}
                           height={62}
                           className="w-full"
+                          alt="ARB accrediation logo"
+                          quality={30}
                           priority
                         />
                       </div>
@@ -72,12 +78,14 @@ export default function Home() {
                   <h1 className="text-[9.5vw]/[0.95] lg:text-[5.5vw]/[0.95] w-[100%] lg:w-[90%] mb-8 lg:mb-32">Creating a healthier, more sustainable relationship between people & place.</h1>
                   <div className="grid grid-cols-2">
                     <div className="col-span-2 lg:col-span-1 mb-6 lg:mb-0 bg-off-white">
-                      <div className="rounded-tl-[95vw] lg:rounded-tl-[50vw] relative overflow-hidden h-[95vw] lg:h-[50vw] mix-blend-multiply">
-                      <Image
-                        src="/images/home-01.png"
-                        fill
-                        className="w-full absolute inset-0 h-full mix-blend-multiply object-center object-cover"
-                      />
+                      <div className="rounded-tl-[95vw] lg:rounded-tl-[50vw] relative overflow-hidden h-[95vw] lg:h-[50vw] mix-blend-multiply bg-black/5">
+                        <Image
+                          src="/images/home-01.png"
+                          fill
+                          alt="Some members of Arc Design Studio gathered around some work"
+                          quality={20}
+                          className="w-full absolute inset-0 h-full mix-blend-multiply object-center object-cover"
+                        />
                       </div>
                     </div>
 
@@ -140,10 +148,12 @@ export default function Home() {
 
                   <div className="flex items-end justify-end">
                     <div className="w-full lg:w-7/12">
-                      <div className="rounded-t-[45vw] lg:rounded-t-[32vw] relative overflow-hidden h-[45vw] lg:h-[32vw] mix-blend-multiply">
+                      <div className="rounded-t-[45vw] lg:rounded-t-[32vw] relative overflow-hidden h-[45vw] lg:h-[32vw] mix-blend-multiply bg-black/5">
                         <Image
                           src="/images/home-02.png"
                           fill
+                          alt="A shot of the Arc Design Studio office space"
+                          quality={20}
                           className="w-full mix-blend-multiply absolute inset-0 object-center object-cover"
                         />
                       </div>

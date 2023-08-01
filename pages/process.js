@@ -28,10 +28,12 @@ export default function Process() {
                 <div className="w-full border-b border-black pb-3 mb-3 relative z-[10]">
                   <div className="grid grid-cols-2">
                     <div className="col-span-2 lg:col-span-1 mb-6 lg:mb-0">
-                      <div className="rounded-tr-[50vw] lg:rounded-tr-[25vw] relative overflow-hidden h-[75vw] lg:h-[50vw] mix-blend-multiply">
+                      <div className="rounded-tr-[50vw] lg:rounded-tr-[25vw] relative overflow-hidden h-[75vw] lg:h-[50vw] mix-blend-multiply bg-black/5">
                         <Image
                           src="/images/process-01.png"
                           fill
+                          quality={20}
+                          alt="Some members of the Arc Design Studio working on an easel"
                           className="w-full absolute inset-0 h-full mix-blend-multiply object-center object-cover"
                         />
                       </div>
@@ -85,6 +87,7 @@ export default function Process() {
                           src="/images/process-map.png"
                           width={1912}
                           height={1594}
+                          alt="A illustration of the Arc Design Studio ecosystem"
                           className="w-full"
                         />
                       </div>
@@ -143,10 +146,12 @@ export default function Process() {
                         className="w-full mix-blend-multiply"
                       /> */}
 
-                      <div className="rounded-br-[50vw] lg:rounded-br-[25vw] relative overflow-hidden h-[68vw] lg:h-[40vw] mix-blend-multiply">
+                      <div className="rounded-br-[50vw] lg:rounded-br-[25vw] relative overflow-hidden h-[68vw] lg:h-[40vw] mix-blend-multiply bg-black/5">
                         <Image
                           src="/images/process-02.png"
+                          quality={20}
                           fill
+                          alt="Some members of the Arc Design Studio in a meeting"
                           className="w-full absolute inset-0 h-full mix-blend-multiply object-center object-cover"
                         />
                       </div>
