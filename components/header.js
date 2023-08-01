@@ -33,16 +33,16 @@ export default function Header({ colorTheme }) {
           <div className="flex flex-wrap items-center">
             <Link scroll={false} href="/" className="flex space-x-1 items-end mr-auto">
               <IconLogo className="w-[25px] lg:w-[28px]" />
-              <span className="block text-base/none lg:text-xl/none font-medium leading-none">Arc Design Studio</span>
+              <span className="block text-base/none lg:text-xl/none  leading-none">Arc Design Studio</span>
             </Link>
 
-            <div className="mx-auto flex space-x-1 text-base/none lg:text-xl/none font-medium">
+            <div className="mx-auto flex space-x-1 text-base/none lg:text-xl/none ">
               <a href="mailto:email@email.com" className="hidden lg:block">Email,</a>
 
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hidden lg:block">Instagram</a>
             </div>
 
-            <nav className="ml-auto flex space-x-1 text-base/none lg:text-xl/none font-medium w-auto">
+            <nav className="ml-auto flex space-x-1 text-base/none lg:text-xl/none  w-auto">
               <FancyLink destination="/" a11yText="Navigate to the home page" active={router.asPath == '/'} label="Overview," className="hidden lg:block" />
 
               <FancyLink destination="/studio" a11yText="Navigate to the studio page" active={router.asPath == '/studio'} label="Studio," className="hidden lg:block" />
@@ -88,7 +88,7 @@ export default function Header({ colorTheme }) {
                   </div>
 
                   <div className="mt-auto">
-                    <p className="font-medium mb-3">How can we help?</p>
+                    <p className=" mb-3">How can we help?</p>
                     <form>
                       <textarea className="w-full placeholder:text-black/30 bg-black/5 p-4 mb-4 hidden lg:block text-sm/[1.2] lg:text-base/[1.2]" rows={8} placeholder="Please leave a name, contact email or number, and a brief overview of your enquiry." />
 
@@ -124,10 +124,10 @@ export default function Header({ colorTheme }) {
                 <div className="flex flex-wrap items-center">
                   <Link scroll={false} onClick={menuToggle} href="/" className="flex space-x-1 items-end mr-auto">
                     <IconLogo className="w-[25px] lg:w-[28px]" />
-                    <span className="block text-base/none lg:text-xl/none font-medium leading-none">Arc Design Studio</span>
+                    <span className="block text-base/none lg:text-xl/none  leading-none">Arc Design Studio</span>
                   </Link>
 
-                  <nav className="ml-auto flex space-x-1 text-base/none lg:text-xl/none font-medium w-auto">                    
+                  <nav className="ml-auto flex space-x-1 text-base/none lg:text-xl/none  w-auto">                    
                     <button className="block lg:hidden" onClick={menuToggle}>Close</button>
                   </nav>
                 </div>
