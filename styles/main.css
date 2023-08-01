@@ -11,8 +11,66 @@
 /* Tailwind Utilities */
 @import 'tailwindcss/utilities';
 
-
-/* Simple defaults */
 body {
-  @apply font-sans antialiased text-black bg-white;
+  @apply font-sans antialiased;
+  overscroll-behavior: none!important;
+
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+   pointer-events: none;
+} 
+
+.ease-custom {
+  @apply ease-[cubic-bezier([0.83,0,0.17,1])] 
+}
+
+.rounded-xl, .rounded-2xl, .rounded-lg, .rounded-full {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0)
+}
+
+.overflow-x-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.overflow-x-scroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.remove-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.remove-scroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.grain {
+  @apply fixed inset-0 w-full h-full overflow-hidden z-[900] opacity-[0.05] bg-repeat pointer-events-none will-change-transform;
+
+  background-image: url("/images/grain.gif");
+  background-position: 50% 50%;
+  background-size: 480px;
 }

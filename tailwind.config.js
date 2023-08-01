@@ -1,13 +1,11 @@
+const { fontFamily } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      'sans': ['Arial', 'sans-serif'],
-      'mono': ['Lucida Console', 'Courier', 'monospace'],
-    },
     screens: {
       sm: "640px",
       md: "768px",
@@ -17,14 +15,17 @@ module.exports = {
       "3xl": "1920px"
     },
     extend: {
+      fontFamily: {
+        sans: ['var(--font-Suisse)', ...fontFamily.sans],
+        mono: ['var(--font-SuisseMono)', ...fontFamily.mono],
+      },
       colors: {
         'black': '#000',
         'white': '#FFF',
-        'example-color': {
-          light: '#ffb288',
-          DEFAULT: '#d18d67',
-          dark: '#ce8860',
-        },
+        'off-white': '#CFCFC3',
+        'grey': '#DBDBDB',
+        'light-orange': '#DCD2C7',
+        'orange': '#E27400',
       }
     },
   },

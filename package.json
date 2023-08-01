@@ -1,14 +1,14 @@
 {
-  "name": "next-tailwind-motion",
+  "name": "arc",
   "description": "A simple Next.js starter kit with TailwindCSS (JIT) and Framer Motion preconfigured",
   "author": "Sam Goddard <hello@samgoddard.co.uk> (https://samgoddard.co.uk)",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:samuelgoddard/next-tailwind-motion.git"
+    "url": "git@github.com:samuelgoddard/arc.git"
   },
   "bugs": {
-    "url": "https://github.com/samuelgoddard/next-tailwind-motion/issues"
+    "url": "https://github.com/samuelgoddard/arc/issues"
   },
   "license": "ISC",
   "keywords": [
@@ -18,7 +18,7 @@
     "framer",
     "motion"
   ],
-  "homepage": "https://sg-next-tailwind-motion.vercel.app/",
+  "homepage": "https://arc.vercel.app/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -26,9 +26,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@studio-freight/lenis": "^1.0.14",
+    "@studio-freight/react-lenis": "^0.0.20",
+    "@svgr/webpack": "^8.0.1",
     "eslint-config-next": "^13.2.4",
-    "framer-motion": "^10.3.0",
+    "framer-motion": "^10.14.0",
     "next": "^13.2.4",
+    "next-sanity": "^1.1.0",
+    "next-sanity-image": "^6.1.0",
     "next-seo": "^4.26.0",
     "postcss-import": "^14.0.0",
     "postcss-nested": "^5.0.5",
@@ -40,6 +46,6 @@
     "autoprefixer": "^10.4.2",
     "eslint": "8.36.0",
     "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.13"
+    "tailwindcss": "^3.3.0"
   }
 }
