@@ -31,12 +31,14 @@ export default function Header({ colorTheme }) {
       <header className={`py-3 border-b border-black fixed top-0 left-0 right-0 w-full z-[999] transition-colors ease-custom duration-[300ms] ${colorTheme}`}>
         <Container>
           <div className="flex flex-wrap items-center">
-            <Link scroll={false} href="/" className="flex space-x-1 items-end mr-auto">
+            <Link scroll={false} href="/" className="flex space-x-1 items-end mr-auto group">
               <IconLogo className="w-[25px] lg:w-[28px]" />
-              <span className="block text-base/none lg:text-xl/none  leading-none">Arc Design Studio</span>
+              <div className="block relative overflow-hidden">
+                <span className="block text-base/[1.075] lg:text-xl/[1.075] leading-[1.075] translate-y-full group-hover:translate-y-0 transition-transform ease-custom duration-[300ms] will-change-transform">Arc Design Studio</span>
+              </div>
             </Link>
 
-            <div className="mx-auto flex space-x-1 text-base/none lg:text-xl/none ">
+            <div className="mx-auto flex space-x-1 text-base/none lg:text-xl/none translate-x-[62px]">
               <a href="mailto:email@email.com" className="hidden lg:block">Email,</a>
 
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hidden lg:block">Instagram</a>
