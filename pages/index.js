@@ -9,6 +9,9 @@ import Link from 'next/link'
 import { homeQuery } from '@/helpers/queries'
 import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
+import PinnedArc from '@/components/pinned-arc'
+import CornerScroller from '@/components/corner-scroller'
+import Zoomer from '@/components/zoomer'
 const pageService = new SanityPageService(homeQuery)
 
 export default function Home(initialData) {
@@ -24,23 +27,15 @@ export default function Home(initialData) {
           exit="exit"
         >
           <main className="block">
+            <PinnedArc />
             <Container>
               <m.div variants={fade} className="h-[calc(100vh-12px)] w-full mb-3">
                 <div className="w-full h-full border-b border-black relative flex items-start lg:items-center justify-center pt-24 lg:pt-0">
-                  <div className="flex absolute top-[60vw] lg:top-[45%] left-0 right-0 w-full text-[14vw]/none lg:text-[8vw]/none text-white z-[10]">
-                    <span className="block mr-auto">A</span>
-                    <span className="block mx-auto">R</span>
-                    <span className="block ml-auto">C</span>
-                  </div>
-
-                  <div className="w-[90vw] lg:w-[55vw] lg:max-w-[85vh] h-[75vw] lg:h-[48vw] lg:max-h-[70vh] lg:translate-y-[-3vw] z-[1] triangle relative overflow-hidden bg-orange">
-                    <div className="absolute inset-0 bg-orange opacity-90 z-10 mix-blend-soft-light will-change-transform"></div>
-                    <SanityImage
-                      image={home.heroImage}
-                      alt="Arc Triangle"
-                      className="w-full will-change-transform mix-blend-multiply grayscale opacity-70"
-                      priority
-                    />
+                  <div className="absolute inset-0 w-full h-full flex items-start lg:items-center justify-center">
+                    <div className="w-[90vw] lg:w-[55vw] lg:max-w-[85vh] h-[75vw] lg:h-[48vw] lg:max-h-[70vh] lg:translate-y-[-3vw] z-[1] triangle overflow-hidden bg-orange relative mt-[45vw] lg:mt-0">
+                      <div className="absolute inset-0 bg-orange opacity-90 z-10 mix-blend-soft-light will-change-transform"></div>
+                      <Zoomer image={home.heroImage} />
+                    </div>
                   </div>
 
                   <span className="absolute bottom-3 left-0 w-[80%] max-w-[480px] text-base/tight hidden lg:block">{home.heroText}</span>
@@ -81,20 +76,11 @@ export default function Home(initialData) {
                   <h1 className="text-[9.5vw]/[0.95] lg:text-[5.5vw]/[0.95] w-[100%] lg:w-[90%] mb-8 lg:mb-32">{home.overviewHeading}</h1>
                   <div className="grid grid-cols-2">
                     <div className="col-span-2 lg:col-span-1 mb-6 lg:mb-0 bg-off-white">
-                      <div className="rounded-tl-[95vw] lg:rounded-tl-[50vw] relative overflow-hidden h-[95vw] lg:h-[50vw] mix-blend-multiply bg-black/15">
-                        {/* <Image
-                          src="/images/home-01.png"
-                          fill
-                          alt="Some members of Arc Design Studio gathered around some work"
-                          quality={20}
-                          className="w-full absolute inset-0 h-full mix-blend-multiply object-center object-cover"
-                        /> */}
-                        <SanityImage
-                          image={home.overviewImage}
-                          className="grayscale mix-blend-multiply"
-                          alt="Some members of Arc Design Studio gathered around some work"
-                        />
-                      </div>
+                      <CornerScroller
+                        layout="topLeft"
+                        image={home.overviewImage}
+                        height="h-[95vw] lg:h-[50vw]"
+                      />
                     </div>
 
                     <div className="col-span-2 lg:col-span-1 flex lg:items-center lg:justify-center">
@@ -140,20 +126,13 @@ export default function Home(initialData) {
 
                   <div className="flex items-end justify-end">
                     <div className="w-full lg:w-7/12">
-                      <div className="rounded-t-[45vw] lg:rounded-t-[32vw] relative overflow-hidden h-[45vw] lg:h-[32vw] mix-blend-multiply bg-black/15">
-                        {/* <Image
-                          src="/images/home-02.png"
-                          fill
-                          alt="A shot of the Arc Design Studio office space"
-                          quality={20}
-                          className="w-full mix-blend-multiply absolute inset-0 object-center object-cover"
-                        /> */}
-                        <SanityImage
-                          image={home.footerImage}
-                          className="grayscale mix-blend-multiply"
-                          alt="A shot of the Arc Design Studio office space"
-                        />
-                      </div>
+                      <CornerScroller
+                        layout="top"
+                        image={home.footerImage}
+                        height="h-[45vw] lg:h-[32vw]"
+                        offset={["-100vh", "100vh"]}
+                        amount="150vw"
+                      />
                     </div>
                   </div>
                 </div>
