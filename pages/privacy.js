@@ -7,11 +7,15 @@ import IconLogo from '@/icons/logo.svg'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
+import { privacyQuery } from '@/helpers/queries'
+import SanityPageService from '@/services/sanityPageService'
+const pageService = new SanityPageService(privacyQuery)
 
-export default function Privacy() {
+export default function Privacy(initialData) {
+  const { data: { privacy }  } = pageService.getPreviewHook(initialData)()
   return (
     <Layout>
-      <NextSeo title="Privacy Policy" />
+      <NextSeo title={privacy.title} />
       
       <LazyMotion features={domAnimation}>
         <m.div
@@ -87,4 +91,11 @@ export default function Privacy() {
       </LazyMotion>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const props = await pageService.fetchQuery(context)
+  return { 
+    props: props
+  };
 }

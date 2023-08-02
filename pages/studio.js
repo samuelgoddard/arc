@@ -6,11 +6,15 @@ import { LazyMotion, domAnimation, m } from 'framer-motion'
 import IconLogo from '@/icons/logo.svg'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
+import { studioQuery } from '@/helpers/queries'
+import SanityPageService from '@/services/sanityPageService'
+const pageService = new SanityPageService(studioQuery)
 
-export default function Studio() {
+export default function Studio(initialData) {
+  const { data: { studio }  } = pageService.getPreviewHook(initialData)()
   return (
     <Layout>
-      <NextSeo title="Studio" />
+      <NextSeo title={studio.title} />
       
       <LazyMotion features={domAnimation}>
         <m.div
@@ -113,4 +117,11 @@ export default function Studio() {
       </LazyMotion>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const props = await pageService.fetchQuery(context)
+  return { 
+    props: props
+  };
 }

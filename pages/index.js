@@ -6,11 +6,15 @@ import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
+import { homeQuery } from '@/helpers/queries'
+import SanityPageService from '@/services/sanityPageService'
+const pageService = new SanityPageService(homeQuery)
 
-export default function Home() {
+export default function Home(initialData) {
+  const { data: { home }  } = pageService.getPreviewHook(initialData)()
   return (
     <Layout>
-      <NextSeo title="Home" />
+      <NextSeo title={home.title} />
       
       <LazyMotion features={domAnimation}>
         <m.div
@@ -171,4 +175,11 @@ export default function Home() {
       </LazyMotion>
     </Layout>
   )
+}
+
+export async function getStaticProps(context) {
+  const props = await pageService.fetchQuery(context)
+  return { 
+    props: props
+  };
 }
