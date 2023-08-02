@@ -1,7 +1,37 @@
 export const homeQuery = `{
   "home": *[_type == "home"][0]{
     title,
-    image {
+    heroText,
+    heroImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    overviewHeading,
+    overviewImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    overviewText,
+    missionHeading,
+    missionItems[]{
+      title,
+      text
+    },
+    footerImage {
       asset-> {
         ...
       },
@@ -24,7 +54,26 @@ export const homeQuery = `{
 export const studioQuery = `{
   "studio": *[_type == "studio"][0]{
     title,
-    image {
+    heroHeading,
+    theTeamText,
+    team[] {
+      name,
+      text,
+      image {
+        asset-> {
+          ...
+        },
+        caption,
+        alt,
+        hotspot {
+          x,
+          y
+        },
+      }
+    },
+    theSpaceHeading,
+    theSpaceText,
+    theSpaceImage {
       asset-> {
         ...
       },
@@ -47,7 +96,39 @@ export const studioQuery = `{
 export const processQuery = `{
   "process": *[_type == "process"][0]{
     title,
-    image {
+    heroHeading,
+    ourViewImagee {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    ourViewText,
+    theNetworkHeading,
+    theNetworkText,
+    theNetworkListItems[],
+    theResponseHeading,
+    theResponseItems[] {
+      image {
+        asset-> {
+          ...
+        },
+        caption,
+        alt,
+        hotspot {
+          x,
+          y
+        },
+      },
+      title,
+      text
+    },
+    footerImage {
       asset-> {
         ...
       },
@@ -70,6 +151,7 @@ export const processQuery = `{
 export const privacyQuery = `{
   "privacy": *[_type == "privacy"][0]{
     title,
+    content,
     image {
       asset-> {
         ...

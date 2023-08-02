@@ -78,3 +78,7 @@ html.lenis {
 .font-mono {
   @apply tracking-wider;
 }
+
+.triangle {
+  clip-path: polygon(50% 0%, 100% 100%, 0 100%);
+}
