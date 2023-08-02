@@ -68,8 +68,9 @@ html.lenis {
 }
 
 .grain {
-  @apply fixed inset-0 w-full h-full overflow-hidden z-[900] opacity-[0.05] bg-repeat pointer-events-none will-change-transform;
+  @apply fixed inset-0 w-full h-full overflow-hidden z-[900] bg-repeat pointer-events-none will-change-transform;
 
+  animation: fadeIn 0.5s ease-in-out forwards;
   background-image: url("/images/grain.gif");
   background-position: 50% 50%;
   background-size: 480px;
@@ -81,4 +82,13 @@ html.lenis {
 
 .triangle {
   clip-path: polygon(50% 0%, 100% 100%, 0 100%);
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 0.05;
+  }
 }

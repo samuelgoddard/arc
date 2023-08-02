@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
-import { fade } from '@/helpers/transitions'
+import { fade, fadeGrain } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
@@ -27,9 +27,9 @@ export default function Home(initialData) {
           exit="exit"
         >
           <main className="block">
-            <PinnedArc />
             <Container>
               <m.div variants={fade} className="h-[calc(100vh-12px)] w-full mb-3">
+                <PinnedArc />
                 <div className="w-full h-full border-b border-black relative flex items-start lg:items-center justify-center pt-24 lg:pt-0">
                   <div className="absolute inset-0 w-full h-full flex items-start lg:items-center justify-center">
                     <div className="w-[90vw] lg:w-[55vw] lg:max-w-[85vh] h-[75vw] lg:h-[48vw] lg:max-h-[70vh] lg:translate-y-[-3vw] z-[1] triangle overflow-hidden bg-orange relative mt-[45vw] lg:mt-0">
