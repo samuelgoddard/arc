@@ -18,7 +18,7 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 30s linear infinite',
         'spin-slower': 'spin 60s linear infinite',
-        'spin-slowest': 'spin 110s linear infinite',
+        'spin-slowest': 'spin 110s linear infinite'
       },
       fontFamily: {
         sans: ['var(--font-Suisse)', ...fontFamily.sans],
