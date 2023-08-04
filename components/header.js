@@ -194,7 +194,7 @@ export default function Header({ colorTheme }) {
                     animate={{ y: 0, transition: { duration: 0.55, delay: 0.1, ease: [0.71,0,0.17,1] }}}
                     exit={{ y: 0, transition: { duration: 0.55, ease: [0.71,0,0.17,1] }}}
                   >
-                    <a href="mailto:email@email.com" className="block text-[6.5vw]/[1]">Email</a>
+                    <a href="mailto:enquiry@arcdesignstudio.co.uk" className="block text-[6.5vw]/[1]">Email</a>
                   </m.div>
                 </div>
                 
