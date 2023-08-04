@@ -37,9 +37,9 @@ export default function Header({ colorTheme }) {
             </Link>
 
             <div className="mx-auto flex space-x-1 text-base/none lg:text-xl/none translate-x-[62px]">
-              <a href="mailto:email@email.com" className="hidden lg:block">Email,</a>
+              <a href="mailto:enquiry@arcdesignstudio.co.uk" className="hidden lg:block group">Email, <span className={`block border-b border-black translate-y-[3px] w-0 mx-auto lg:group-hover:w-[75%] transition-all ease-custom duration-[220ms]`}></span></a>
 
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hidden lg:block">Instagram</a>
+              <a href="https://www.instagram.com/arc_ds/" target="_blank" rel="noopener noreferrer" className="group hidden lg:block">Instagram <span className={`block border-b border-black translate-y-[3px] w-0 mx-auto lg:group-hover:w-[75%] transition-all ease-custom duration-[220ms]`}></span></a>
             </div>
 
             <nav className="ml-auto flex space-x-1 text-base/none lg:text-xl/none  w-auto">
@@ -49,7 +49,7 @@ export default function Header({ colorTheme }) {
 
               <FancyLink destination="/process" a11yText="Navigate to the process page" active={router.asPath == '/process'} label="Process," className="hidden lg:block" />
               
-              <button className="hidden lg:block" onClick={contactToggle}>Contact</button>
+              <button className="hidden lg:block group" onClick={contactToggle}>Contact <span className={`block border-b border-black translate-y-[3px] w-0 mx-auto lg:group-hover:w-[75%] transition-all ease-custom duration-[220ms]`}></span></button>
               
               <button className="block lg:hidden" onClick={menuToggle}>Menu</button>
             </nav>
@@ -68,9 +68,9 @@ export default function Header({ colorTheme }) {
               onClick={contactToggle}
             ></m.button>
             <m.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 0.55, ease: [0.71,0,0.17,1] }}}
-              exit={{ opacity: 0, transition: { duration: 0.55, ease: [0.71,0,0.17,1] }}}
+              initial={{ opacity: 1, x: '100%', y: '100%' }}
+              animate={{ opacity: 1, x: 0, y: 0, transition: { duration: 0.66, ease: [0.71,0,0.17,1] }}}
+              exit={{ opacity: 1, x: '100%', y: '100%', transition: { duration: 0.66, ease: [0.71,0,0.17,1]  }}}
               className="z-[1001] fixed bottom-0 right-0 w-[90%] lg:w-[65%] bg-white p-4"
             >
               <div className="w-full border-b border-black mb-4 pb-0">
@@ -82,7 +82,7 @@ export default function Header({ colorTheme }) {
                   <div className="text-sm/[1.2] lg:text-base/[1.2] border-b border-black pb-4 mb-4">
                     <p className="w-[90%] mb-3 lg:mb-5">We&apos;re here to help! If you have any questions, comments, or requests, please don&apos;t hesitate to contact us. You can reach us by any of the methods below. We&apos;ll get back to you as soon as possible.</p>
 
-                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Email Us</strong>: enquiries@arcdesignstudio.co.uk</p>
+                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Email Us</strong>: <a href="mailto:enquiry@arcdesignstudio.co.uk">enquiries@arcdesignstudio.co.uk</a></p>
                     <p className="w-[90%] mb-3 lg:mb-5"><strong>Phone number</strong>: 01234 567 890</p>
                     <p className="w-[90%] mb-3 lg:mb-5"><strong>Address</strong>: ARC Space, Western House, Nottingham, NG1 3AZ</p>
                   </div>
@@ -204,7 +204,7 @@ export default function Header({ colorTheme }) {
                     animate={{ y: 0, transition: { duration: 0.55, delay: 0.1, ease: [0.71,0,0.17,1] }}}
                     exit={{ y: 0, transition: { duration: 0.55, ease: [0.71,0,0.17,1] }}}
                   >
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="block text-[6.5vw]/[1]">Instagram</a>
+                    <a href="https://www.instagram.com/arc_ds/" target="_blank" rel="noopener noreferrer" className="block text-[6.5vw]/[1]">Instagram</a>
                   </m.div>
                 </div>
               </div>

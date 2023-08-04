@@ -20,6 +20,9 @@ module.exports = {
         'spin-slower': 'spin 60s linear infinite',
         'spin-slowest': 'spin 110s linear infinite'
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
       fontFamily: {
         sans: ['var(--font-Suisse)', ...fontFamily.sans],
       },

@@ -2,13 +2,14 @@ import Layout from '@/components/layout'
 import Footer from '@/components/footer'
 import Container from '@/components/container'
 import { fade } from '@/helpers/transitions'
-import { LazyMotion, domAnimation, m } from 'framer-motion'
+import { LazyMotion, domAnimation, m, useWillChange } from 'framer-motion'
 import IconLogo from '@/icons/logo.svg'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import { studioQuery } from '@/helpers/queries'
 import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
+import CornerScroller from '@/components/corner-scroller'
 const pageService = new SanityPageService(studioQuery)
 
 export default function Studio(initialData) {
@@ -25,7 +26,7 @@ export default function Studio(initialData) {
         >
           <main className="pb-3 pt-14 lg:pt-16">
             <Container>
-              <m.article variants={fade}>
+              <m.article variants={fade} className="relative z-[1]">
                 <div className="border-b border-black pb-3">
                   <h1 className="text-[10vw]/[0.95] lg:text-[5.5vw]/[0.95] w-[100%] lg:w-[80%] mb-16 lg:mb-[15vw]">{studio.heroHeading}</h1>
 
@@ -44,21 +45,24 @@ export default function Studio(initialData) {
                   {studio.team.map((e, i) => {
                     let shape = 'rounded-[50px]'
                     
-                    i == 0 && (shape = 'rounded-bl-[200px]')
-                    i == 1 && (shape = 'rounded-[70px] rounded-br-[0%]')
-                    i == 2 && (shape = 'rounded-tr-[100px] rounded-bl-[100px] rounded-[0px]')
-                    i == 3 && (shape = 'rounded-tl-[150px] rounded-[0px]')
-                    i == 4 && (shape = 'rounded-t-[150px] rounded-[0px]')
-                    i == 5 && (shape = 'rounded-tr-[150px] rounded-[0px]')
-                    i == 6 && (shape = 'rounded-br-[150px] rounded-[0px]')
-                    i == 7 && (shape = 'rounded-tl-[150px] rounded-[0px]')
+                    i == 0 && (shape = 'rounded-bl-[200px] group-hover:rounded-bl-[0]')
+                    i == 1 && (shape = 'rounded-[70px] rounded-br-[0%] group-hover:rounded-[0]')
+                    i == 2 && (shape = 'rounded-tr-[100px] rounded-bl-[100px] rounded-[0px] group-hover:rounded-tr-[0] group-hover:rounded-bl-[0]')
+                    i == 3 && (shape = 'rounded-tl-[150px] rounded-[0px] group-hover:rounded-tl-[0]')
+                    i == 4 && (shape = 'rounded-t-[150px] rounded-[0px] group-hover:rounded-t-[0]')
+                    i == 5 && (shape = 'rounded-tr-[150px] rounded-[0px] group-hover:rounded-tr-[0]')
+                    i == 6 && (shape = 'rounded-br-[150px] rounded-[0px] group-hover:rounded-br-[0]')
+                    i == 7 && (shape = 'rounded-tl-[150px] rounded-[0px] group-hover:rounded-tl-[0]')
 
                     return (
-                      <div key={i} className={`col-span-3 lg:col-span-1 border-b border-black pb-3 lg:pb-0 ${ (((i+1)%3) === 0) ? '' : 'lg:border-r' } ${i == 6 || i == 7 ? 'lg:border-b-0' : '' } ${i+1 == 8 ? 'border-b-0' : '' }`}>
+                      <div key={i} className={`col-span-3 lg:col-span-1 border-b border-black pb-3 lg:pb-0 group ${ (((i+1)%3) === 0) ? '' : 'lg:border-r' } ${i == 6 || i == 7 ? 'lg:border-b-0' : '' } ${i+1 == 8 ? 'border-b-0' : '' }`}>
                         <div className={`mb-3 lg:mb-[7vw] py-2 ${i == 0 || i == 3 || i == 6 ? 'lg:p-2 lg:pl-0' : 'lg:p-2' } ${i == 2 || i == 5 ? 'lg:pr-0 ' : '' }`}>
-                          <div className={`w-full h-[60vw] lg:h-[22vw] bg-black/25 ${shape} relative overflow-hidden will-change-transform`}>
+                          <div className={`w-full h-[60vw] lg:h-[22vw] bg-black/25 ${shape} relative overflow-hidden will-change-transform group-hover:bg-orange transition-all ease-custom duration-[450ms]`}>
                             {e.image && (
-                              <SanityImage image={e.image} alt={`Portrait of ${e.name}`} className="grayscale mix-blend-multiply" />
+                              <>
+                              <SanityImage image={e.image} alt={`Portrait of ${e.name}`} className="grayscale mix-blend-multiply group-hover:scale-[1.05] transition-transform ease-custom duration-[750ms]" />
+                              <div className="absolute inset-0 w-full h-full bg-orange mix-blend-soft-light z-[10] opacity-0 transition-opacity ease-custom duration-[450ms]"></div>
+                              </>
                             )}
                           </div>
                         </div>
@@ -88,20 +92,21 @@ export default function Studio(initialData) {
                       className="w-full mix-blend-multiply"
                     /> */}
 
-                    <div className="rounded-tr-[30vw] lg:rounded-tr-[20vw] relative overflow-hidden h-[68vw] lg:h-[45vw] mix-blend-multiply bg-black/15 will-change-transform">
-                      {/* <Image
-                        src="/images/studio-01.png"
-                        fill
-                        quality={20}
-                        alt="All of the members of the Arc Design Studio team"
-                        className="w-full absolute inset-0 h-full mix-blend-multiply object-center object-cover"
-                      /> */}
+                    {/* <div className="rounded-tr-[30vw] lg:rounded-tr-[20vw] relative overflow-hidden h-[68vw] lg:h-[45vw] mix-blend-multiply bg-black/15 will-change-transform">
                       <SanityImage
                         image={studio.theSpaceImage}
                         alt="All of the members of the Arc Design Studio team"
                         className="grayscale mix-blend-multiply"
                       />
-                    </div>
+                    </div> */}
+
+                    <CornerScroller
+                      layout="topRight"
+                      image={studio.theSpaceImage}
+                      height="h-[68vw] lg:h-[45vw]"
+                      offset={["-100vh", "0vh"]}
+                      amount="500px"
+                    />
                   </div>
                   <div className="flex-1 lg:border-l lg:border-black lg:pl-3 flex flex-col">
                     <div className="content w-full lg:w-2/3 max-w-[400px] mb-3 lg:mb-0">
@@ -110,7 +115,15 @@ export default function Studio(initialData) {
 
                     <div className="mt-auto flex items-end">
                       <div className="w-1/2">
-                        <a href="https://www.arc-space.co.uk/" target="_blank" rel="noopener noreferrer" className="bg-orange text-white p-2 px-4 rounded-full inline-block">See Arc Space</a>
+                        <a href="https://www.arc-space.co.uk/" target="_blank" rel="noopener noreferrer" className="bg-orange text-white p-2 px-4 rounded-full inline-block group relative overflow-hidden">
+                          <span className="block relative z-[10] overflow-hidden">
+                            <span className="block will-change-transform translate-y-0 group-hover:translate-y-[-100%] transition-transform ease-custom duration-[400ms]">See Arc Space</span>
+                            <span className="block will-change-transform translate-y-full absolute inset-0 group-hover:translate-y-0 transition-transform ease-custom duration-[400ms]">See Arc Space</span>
+                          </span>
+                          <span className="absolute inset-0 z-[1] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:delay-[0ms] delay-[400ms]">
+                            <span className="block w-[10px] h-[10px] rounded-full bg-gradient-radial from-black/10 via-black/10 to-transparent transition-all ease-custom duration-[400ms] group-hover:scale-[14]"></span>
+                          </span>
+                        </a>
                       </div>
 
                       <IconLogo className="hidden lg:block w-[33%] lg:w-[40%] ml-auto max-w-[180px]" />

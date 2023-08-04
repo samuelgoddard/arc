@@ -92,3 +92,8 @@ html.lenis {
       opacity: 0.05;
   }
 }
+
+.mix{
+  -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+    }

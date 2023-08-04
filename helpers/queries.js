@@ -111,7 +111,10 @@ export const processQuery = `{
     ourViewText,
     theNetworkHeading,
     theNetworkText,
-    theNetworkListItems[],
+    theNetworkListItems[] {
+      title,
+      department
+    },
     theResponseHeading,
     theResponseItems[] {
       image {

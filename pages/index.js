@@ -28,7 +28,7 @@ export default function Home(initialData) {
         >
           <main className="block">
             <Container>
-              <m.div variants={fade} className="h-[calc(100vh-12px)] w-full mb-3">
+              <m.div variants={fade} className="h-[calc(100vh-12px)] w-full mb-3 relative z-[1]">
                 <PinnedArc />
                 <div className="w-full h-full border-b border-black relative flex items-start lg:items-center justify-center pt-24 lg:pt-0">
                   <div className="absolute inset-0 w-full h-full flex items-start lg:items-center justify-center">
@@ -43,24 +43,24 @@ export default function Home(initialData) {
                   <div className="absolute bottom-3 left-0 lg:left-auto lg:right-0">
                     <span className="block lg:hidden w-[85%] max-w-[480px] text-base/tight mb-8 lg:mb-0">{home.heroText}</span>
 
-                    <div className="flex space-x-3 items-end mix-blend-color-burn">
-                      <div className="w-[80px] lg:w-[100px] mix-blend-color-burn">
+                    <div className="flex space-x-3 items-end">
+                      <div className="w-[80px] lg:w-[100px] relative z-[1] opacity-1 bg-off-white">
                         <Image
                           src="/images/riba.jpg"
                           width={174}
                           height={82}
-                          className="w-full"
+                          className="w-full relative z-[1] mix-blend-color-burn"
                           quality={30}
                           alt="RIBA accrediation logo"
                           priority
                         />
                       </div>
-                      <div className="w-[120px] lg:w-[140px] mb-[5px] mix-blend-color-burn">
+                      <div className="w-[120px] lg:w-[140px] mb-[5px] relative z-[1] opacity-1 bg-off-white">
                         <Image
                           src="/images/arb.jpg"
                           width={250}
                           height={62}
-                          className="w-full"
+                          className="w-full mix-blend-color-burn "
                           alt="ARB accrediation logo"
                           quality={30}
                           priority
@@ -80,6 +80,7 @@ export default function Home(initialData) {
                         layout="topLeft"
                         image={home.overviewImage}
                         height="h-[95vw] lg:h-[50vw]"
+                        amount="150%"
                       />
                     </div>
 
@@ -90,7 +91,15 @@ export default function Home(initialData) {
                           <p>{home.overviewText}</p>
                         </div>
 
-                        <Link scroll={false} href="/process" className="bg-black text-white p-2 px-4 rounded-full inline-block">Our Process</Link>
+                        <Link scroll={false} href="/process" className="bg-orange text-white p-2 px-4 rounded-full inline-block group relative overflow-hidden">
+                          <span className="block relative z-[10] overflow-hidden">
+                            <span className="block will-change-transform translate-y-0 group-hover:translate-y-[-100%] transition-transform ease-custom duration-[400ms]">Our Process</span>
+                            <span className="block will-change-transform translate-y-full absolute inset-0 group-hover:translate-y-0 transition-transform ease-custom duration-[400ms]">Our Process</span>
+                          </span>
+                          <span className="absolute inset-0 z-[1] flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:delay-[0ms] delay-[400ms]">
+                            <span className="block w-[10px] h-[10px] rounded-full bg-gradient-radial from-black/10 via-black/10 to-transparent transition-all ease-custom duration-[400ms] group-hover:scale-[14]"></span>
+                          </span>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -125,13 +134,13 @@ export default function Home(initialData) {
                   </div>
 
                   <div className="flex items-end justify-end">
-                    <div className="w-full lg:w-7/12">
+                    <div className="w-full lg:w-7/12 bg-off-white">
                       <CornerScroller
                         layout="top"
                         image={home.footerImage}
                         height="h-[45vw] lg:h-[32vw]"
                         offset={["-100vh", "100vh"]}
-                        amount="150vw"
+                        amount="2200px"
                       />
                     </div>
                   </div>
