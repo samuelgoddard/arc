@@ -28,12 +28,12 @@ export default function Home(initialData) {
         >
           <main className="block">
             <Container>
-              <m.div variants={fade} className="h-[calc(100vh-12px)] w-full mb-3 relative z-[1]">
+              <m.div variants={fade} className="h-[calc(100vh-12px)] w-full mb-3 relative z-[100]">
                 <PinnedArc />
                 <div className="w-full h-full border-b border-black relative flex items-start lg:items-center justify-center pt-24 lg:pt-0">
                   <div className="absolute inset-0 w-full h-full flex items-start lg:items-center justify-center">
                     <div className="w-[90vw] lg:w-[55vw] lg:max-w-[85vh] h-[75vw] lg:h-[48vw] lg:max-h-[70vh] lg:translate-y-[-3vw] z-[1] triangle overflow-hidden bg-orange relative mt-[45vw] lg:mt-0">
-                      <div className="absolute inset-0 bg-orange opacity-90 z-10 mix-blend-soft-light will-change-transform"></div>
+                      <div className="absolute inset-0 bg-orange opacity-90 z-[20] mix-blend-soft-light will-change-transform"></div>
                       <Zoomer image={home.heroImage} />
                     </div>
                   </div>
