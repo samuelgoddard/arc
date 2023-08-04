@@ -45,7 +45,7 @@ export default function Orbit() {
         </m.div>
       </div>
 
-      <div className="absolute inset-0 w-full h-full flex items-center justify-center text-[#FFDEB7] font-mono text-sm xl:text-lg">
+      <div className="absolute inset-0 w-full h-full flex items-center justify-center text-[#FFDEB7] font-mono text-[10px]/[1.15] xl:text-lg/[1.1]">
         <div className="relative w-[20vw] lg:w-[12vw] text-center uppercase leading-[1]">
           <span className="block relative z-10">THE ARC TEAM</span>
 
@@ -55,13 +55,13 @@ export default function Orbit() {
         </div>
       </div>
 
-      <div className="absolute inset-0 w-full h-full flex items-center justify-center text-black font-mono text-sm/[1.15] xl:text-lg/[1.1] mt-[19.5%] lg:mt-[20%]">
+      <div className="absolute inset-0 w-full h-full flex items-center justify-center text-black font-mono text-[10px]/[1.15] xl:text-lg/[1.1] mt-[19.5%] lg:mt-[20%]">
         <div className="relative w-[20vw] lg:w-[12vw] text-center uppercase">
           <span className="block relative z-10">Supporting<br/>Experts</span>
         </div>
       </div>
 
-      <div className="absolute inset-0 w-full h-full flex items-center justify-center text-black font-mono text-sm/[1.15] xl:text-lg/[1.1] mt-[35%] lg:mt-[35%]">
+      <div className="absolute inset-0 w-full h-full flex items-center justify-center text-black font-mono text-[10px]/[1.15] xl:text-lg/[1.1] mt-[35%] lg:mt-[35%]">
         <div className="relative w-[20vw] lg:w-[12vw] text-center uppercase">
           <span className="block relative z-10">Wider<br/>Network</span>
         </div>
