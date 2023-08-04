@@ -117,8 +117,8 @@ export default function Header({ colorTheme }) {
           <>
             <m.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: { duration: 0.55, ease: [0.71,0,0.17,1] }}}
-              exit={{ opacity: 0, transition: { duration: 0.55, ease: [0.71,0,0.17,1] }}}
+              animate={{ opacity: 1, transition: { duration: 0.33, ease: [0.71,0,0.17,1] }}}
+              exit={{ opacity: 0, transition: { duration: 0.33, ease: [0.71,0,0.17,1] }}}
               className="z-[999] fixed inset-0 bg-orange flex flex-col lg:hidden"
             >
               <div className="p-3 border-b border-black w-full z-[999] transition-colors ease-custom duration-[300ms] mb-auto">
