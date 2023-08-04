@@ -13,7 +13,7 @@ export default function PinnedArc() {
         <span className="block mx-auto">R</span>
         <span className="block ml-auto">C</span>
       </m.div>
-
+    
       <m.div style={{ translateY: yy }} className="w-full mt-[20px] lg:-mt-0 hidden lg:flex">
         <span className="block mr-auto">A</span>
         <span className="block mx-auto">R</span>

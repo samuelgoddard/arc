@@ -60,7 +60,7 @@ export default function Studio(initialData) {
                           <div className={`w-full h-[60vw] lg:h-[22vw] bg-black/25 ${shape} relative overflow-hidden will-change-transform group-hover:bg-orange transition-all ease-custom duration-[450ms]`}>
                             {e.image && (
                               <>
-                              <SanityImage image={e.image} alt={`Portrait of ${e.name}`} className="grayscale mix-blend-multiply group-hover:scale-[1.05] transition-transform ease-custom duration-[750ms]" />
+                              <SanityImage image={e.image} alt={`Portrait of ${e.name}`} className="grayscale mix-blend-multiply" />
                               <div className="absolute inset-0 w-full h-full bg-orange mix-blend-soft-light z-[10] opacity-0 transition-opacity ease-custom duration-[450ms]"></div>
                               </>
                             )}
