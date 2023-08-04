@@ -17,6 +17,7 @@ export default function CornerScroller({image, height, layout, offset, amount, o
   layout == 'top' && ( layoutStyle = { borderTopLeftRadius: y, borderTopRightRadius: y } )
   layout == 'topRight' && ( layoutStyle = { borderTopRightRadius: y, borderTopLeftRadius: 0 } )
   layout == 'bottomRight' && ( layoutStyle = { borderBottomRightRadius: y, borderTopLeftRadius: 0, borderTopRightRadius: 0 } )
+  layout == 'bottomLeft' && ( layoutStyle = { borderBottomLeftRadius: y, borderTopLeftRadius: 0, borderTopRightRadius: 0 } )
   return(
     <div className="mix-blend-multiply relative z-[0]">
       <m.div ref={ref} style={layoutStyle} className={`relative z-[0] overflow-hidden will-change-transform ${height} ${ orange ? 'bg-orange' : 'bg-black/10'} `}>

@@ -101,7 +101,7 @@ export default function Studio(initialData) {
                     </div> */}
 
                     <CornerScroller
-                      layout="topRight"
+                      layout="bottomLeft"
                       image={studio.theSpaceImage}
                       height="h-[68vw] lg:h-[45vw]"
                       offset={["-100vh", "0vh"]}
