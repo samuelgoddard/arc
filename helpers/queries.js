@@ -28,6 +28,17 @@ export const homeQuery = `{
     overviewText,
     missionHeading,
     missionItems[]{
+      image {
+        asset-> {
+          ...
+        },
+        caption,
+        alt,
+        hotspot {
+          x,
+          y
+        },
+      },
       title,
       text
     },
@@ -48,6 +59,10 @@ export const homeQuery = `{
         asset->
       }
     },
+  },
+  "contact": *[_type == "contact"][0]{
+    companyName,
+    companyNumber
   }
 }`
 
@@ -59,6 +74,7 @@ export const studioQuery = `{
     team[] {
       name,
       text,
+      jobTitle,
       image {
         asset-> {
           ...
@@ -90,6 +106,10 @@ export const studioQuery = `{
         asset->
       }
     },
+  },
+  "contact": *[_type == "contact"][0]{
+    companyName,
+    companyNumber
   }
 }`
 
@@ -142,12 +162,17 @@ export const processQuery = `{
         y
       },
     },
+    footerText,
     seo {
       ...,
       shareGraphic {
         asset->
       }
     },
+  },
+  "contact": *[_type == "contact"][0]{
+    companyName,
+    companyNumber
   }
 }`
 
@@ -172,5 +197,9 @@ export const privacyQuery = `{
         asset->
       }
     },
+  },
+  "contact": *[_type == "contact"][0]{
+    companyName,
+    companyNumber
   }
 }`

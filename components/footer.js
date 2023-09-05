@@ -1,14 +1,14 @@
 import Container from '@/components/container'
 import FancyLink from './fancyLink'
 
-export default function Footer() {
+export default function Footer({ contact }) {
   return (
     <footer className="">
       <Container>
         <div className="border-t border-black py-3">
           <div className="flex flex-wrap text-xs">
             <div className="space-x-1 mb-3 md:mb-0 hidden lg:flex">
-              <span className="block text-base/none lg:text-lg/none ">© {new Date().getFullYear()}, Arc Design Studio Limited — 13116151</span>
+              <span className="block text-base/none lg:text-lg/none ">© {new Date().getFullYear()}{contact && (<>, {contact.companyName} — {contact.companyNumber}</>)}</span>
             </div>
 
             <div className="lg:ml-auto w-full lg:w-auto">
@@ -25,7 +25,7 @@ export default function Footer() {
               </nav>
 
               <div className="flex lg:hidden space-x-1">
-                <span className="block text-base/none lg:text-lg/none ">© {new Date().getFullYear()}, Arc Design Studio Limited — 13116151</span>
+                <span className="block text-base/none lg:text-lg/none ">© {new Date().getFullYear()}{contact && (<>, {contact.companyName} — {contact.companyNumber}</>)}</span>
               </div>
             </div>
           </div>

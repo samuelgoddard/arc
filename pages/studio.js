@@ -13,7 +13,7 @@ import CornerScroller from '@/components/corner-scroller'
 const pageService = new SanityPageService(studioQuery)
 
 export default function Studio(initialData) {
-  const { data: { studio }  } = pageService.getPreviewHook(initialData)()
+  const { data: { studio, contact }  } = pageService.getPreviewHook(initialData)()
   return (
     <Layout>
       <NextSeo title={studio.title} />
@@ -67,7 +67,10 @@ export default function Studio(initialData) {
                           </div>
                         </div>
                         <div className="w-11/12 lg:w-10/12 p-2">
-                          <p className="text-lg lg:text-xl mb-3"><strong>{e.name}</strong></p>
+                          <p className={`text-lg lg:text-xl ${e.jobTitle ? 'mb-[2px]' : 'mb-3' }`}><strong>{e.name}</strong></p>
+                          {e.jobTitle && (
+                            <p className="text-base/[1.2] mb-5 text-black text-opacity-60"><strong>{e.jobTitle}</strong></p>
+                          )}
                           {e.text && (
                             <p className="text-base/[1.2]">{e.text}</p>
                           )}
@@ -135,7 +138,7 @@ export default function Studio(initialData) {
           </main>
           
           <m.div variants={fade}>
-            <Footer />
+            <Footer contact={contact} />
           </m.div>
         </m.div>
       </LazyMotion>

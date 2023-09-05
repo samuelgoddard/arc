@@ -12,7 +12,7 @@ import SanityPageService from '@/services/sanityPageService'
 const pageService = new SanityPageService(privacyQuery)
 
 export default function Privacy(initialData) {
-  const { data: { privacy }  } = pageService.getPreviewHook(initialData)()
+  const { data: { privacy, contact }  } = pageService.getPreviewHook(initialData)()
   return (
     <Layout>
       <NextSeo title={privacy.title} />
@@ -85,7 +85,7 @@ export default function Privacy(initialData) {
           </main>
           
           <m.div variants={fade}>
-            <Footer />
+            <Footer contact={contact} />
           </m.div>
         </m.div>
       </LazyMotion>

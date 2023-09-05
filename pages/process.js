@@ -14,7 +14,7 @@ import CornerScroller from '@/components/corner-scroller'
 const pageService = new SanityPageService(processQuery)
 
 export default function Process(initialData) {
-  const { data: { process }  } = pageService.getPreviewHook(initialData)()
+  const { data: { process, contact }  } = pageService.getPreviewHook(initialData)()
   return (
     <Layout>
       <NextSeo title={process.title} />
@@ -142,6 +142,9 @@ export default function Process(initialData) {
 
                   <div className="flex flex-wrap items-end justify-end">
                     <div className="w-full lg:flex-1 order-2 lg:order-1">
+                      <div className="w-10/12 lg:w-7/12 max-w-[450px] content mb-4">
+                        <p>{process.footerText}</p>
+                      </div>
                       <a href="mailto:enquiry@arcdesignstudio.co.uk" target="_blank" rel="noopener noreferrer" className="bg-orange text-white p-2 px-4 rounded-full inline-block group relative overflow-hidden">
                         <span className="block relative z-[10] overflow-hidden">
                           <span className="block will-change-transform translate-y-0 group-hover:translate-y-[-100%] transition-transform ease-custom duration-[400ms]">Get in touch</span>
@@ -152,7 +155,7 @@ export default function Process(initialData) {
                         </span>
                       </a>
                     </div>
-                    <div className="w-full lg:w-7/12 order-1 lg:order-2 mb-3 lg:mb-0 bg-light-orange">
+                    <div className="w-full lg:w-7/12 order-1 lg:order-2 mb-4 lg:mb-0 bg-light-orange">
                       {/* <Image
                         src="/images/process-02.png"
                         width={2082}
@@ -175,7 +178,7 @@ export default function Process(initialData) {
           </main>
           
           <m.div variants={fade}>
-            <Footer />
+            <Footer contact={contact} />
           </m.div>
         </m.div>
       </LazyMotion>
