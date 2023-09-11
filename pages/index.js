@@ -127,10 +127,10 @@ export default function Home(initialData) {
                           <span className="w-8 h-8 lg:w-10 lg:h-10 bg-black rounded-full flex items-center justify-center text-off-white text-lg lg:text-xl mb-3 lg:mb-[5vw]">{i+1}</span>
 
                           {e.image && (
-                            <div className="w-1/2 h-[28vw] lg:h-[10.5vw] my-12 lg:mt-[5vw] mb-[5vw] bg-off-white relative overflow-hidden">
+                            <div className="w-[45%] lg:w-[40%] h-[60vw] lg:h-[20vw] my-12 lg:mt-[5vw] mb-[5vw] bg-off-white relative overflow-hidden">
                               <SanityImage
                                 image={e.image}
-                                className="mix-blend-multiply scale-[1.003] bg-off-white"
+                                className="mix-blend-multiply scale-[1.003] bg-off-red"
                                 noBg
                               />
                             </div>
