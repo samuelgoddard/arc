@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { privacyQuery } from '@/helpers/queries'
 import SanityPageService from '@/services/sanityPageService'
 const pageService = new SanityPageService(privacyQuery)
+import {PortableText} from '@portabletext/react'
 
 export default function Privacy(initialData) {
   const { data: { privacy, contact }  } = pageService.getPreviewHook(initialData)()
@@ -32,26 +33,10 @@ export default function Privacy(initialData) {
 
                 <div className="mb-3 pb-3 border-b border-black">
                   <div className="content w-[90%] lg:w-[75%] max-w-[720px]">
-                    <h2>Some Stuff Here</h2>
-                    <p>The core team at ARC comes from an eclectic background of Architects, Developers, Technologists and Construction specialists. We manage a much larger network of contractors, engineers and specialists who we have spent years building strong relationships with. Between our core team and our wider network we are perfectly placed to design, detail and develop projects of scale across the country.</p>
-                    <p>The core team at ARC comes from an eclectic background of Architects, Developers, Technologists and Construction specialists. We manage a much larger network of contractors, engineers and specialists who we have spent years building strong relationships with. Between our core team and our wider network we are perfectly placed to design, detail and develop projects of scale across the country.
-                    </p>
-
-                    <ul>
-                      <li>The core team at ARC comes from an eclectic background of Architects, Developers</li>
-                      <li>Technologists and Construction specialists</li>
-                      <li>Between our core team and our wider network we are perfectly placed to design</li>
-                    </ul>
-
-                    <p>The core team at ARC comes from an eclectic background of Architects, Developers, Technologists and Construction specialists. We manage a much larger network of contractors, engineers and specialists who we have spent years building strong relationships with. Between our core team and our wider network we are perfectly placed to design, detail and develop projects of scale across the country.</p>
-                    <h2>Some Stuff Here</h2>
-                    <p>The core team at ARC comes from an eclectic background of Architects, Developers, Technologists and Construction specialists. We manage a much larger network of contractors, engineers and specialists who we have spent years building strong relationships with. Between our core team and our wider network we are perfectly placed to design, detail and develop projects of scale across the country.</p>
-                    <p>The core team at ARC comes from an eclectic background of Architects, Developers, Technologists and Construction specialists. We manage a much larger network of contractors, engineers and specialists who we have spent years building strong relationships with. Between our core team and our wider network we are perfectly placed to design, detail and develop projects of scale across the country.</p>
-                    <p>The core team at ARC comes from an eclectic background of Architects, Developers, Technologists and Construction specialists. We manage a much larger network of contractors, engineers and specialists who we have spent years building strong relationships with. Between our core team and our wider network we are perfectly placed to design, detail and develop projects of scale across the country.</p>
-                    <h2>Some Stuff Here</h2>
-                    <p>The core team at ARC comes from an eclectic background of Architects, Developers, Technologists and Construction specialists. We manage a much larger network of contractors, engineers and specialists who we have spent years building strong relationships with. Between our core team and our wider network we are perfectly placed to design, detail and develop projects of scale across the country.</p>
-                    <p>The core team at ARC comes from an eclectic background of Architects, Developers, Technologists and Construction specialists. We manage a much larger network of contractors, engineers and specialists who we have spent years building strong relationships with. Between our core team and our wider network we are perfectly placed to design, detail and develop projects of scale across the country.</p>
-                    <p>The core team at ARC comes from an eclectic background of Architects, Developers, Technologists and Construction specialists. We manage a much larger network of contractors, engineers and specialists who we have spent years building strong relationships with. Between our core team and our wider network we are perfectly placed to design, detail and develop projects of scale across the country.</p>
+                  <PortableText
+                    className="content"
+                    value={privacy.content}
+                  />
                   </div>
                 </div>                
 

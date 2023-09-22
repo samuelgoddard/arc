@@ -82,17 +82,20 @@ export default function Header({ colorTheme }) {
                   <div className="text-sm/[1.2] lg:text-base/[1.2] border-b border-black pb-4 mb-4">
                     <p className="w-[90%] mb-3 lg:mb-5">We&apos;re here to help! If you have any questions, comments, or requests, please don&apos;t hesitate to contact us. You can reach us by any of the methods below. We&apos;ll get back to you as soon as possible.</p>
 
-                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Email Us</strong>: <a href="mailto:enquiry@arcdesignstudio.co.uk">enquiries@arcdesignstudio.co.uk</a></p>
-                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Phone number</strong>: 01234 567 890</p>
+                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Email Us</strong>: <a href="mailto:hello@arcdesignstudio.co.uk" className="hover:text-orange focus-visible:text-orange">hello@arcdesignstudio.co.uk</a></p>
+                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Phone number</strong>: <a href="tel:01234567890" className="hover:text-orange focus-visible:text-orange">01234 567 890</a></p>
                     <p className="w-[90%] mb-3 lg:mb-5"><strong>Address</strong>: ARC Space, Western House, Nottingham, NG1 3AZ</p>
                   </div>
 
                   <div className="mt-auto">
                     <p className=" mb-3">How can we help?</p>
-                    <form>
-                      <textarea className="w-full placeholder:text-black/30 bg-black/5 p-4 mb-4 hidden lg:block text-sm/[1.2] lg:text-base/[1.2]" rows={8} placeholder="Please leave a name, contact email or number, and a brief overview of your enquiry." />
+                    <form
+                      action="https://formspree.io/f/xyyqnjnz"
+                      method="POST"
+                    >
+                      <textarea name="message" className="w-full placeholder:text-black/30 bg-black/5 p-4 mb-4 hidden lg:block text-sm/[1.2] lg:text-base/[1.2] appearance-none focus:outline-orange" rows={6} placeholder="Please leave a name, contact email or number, and a brief overview of your enquiry." />
 
-                      <textarea className="w-full placeholder:text-black/30 bg-black/5 p-3 mb-4 block lg:hidden text-sm/[1.2] lg:text-base/[1.2]" rows={3} placeholder="Please leave a name, contact email or number, and a brief overview of your enquiry." />
+                      <textarea name="message" className="w-full placeholder:text-black/30 bg-black/5 p-3 mb-4 block lg:hidden text-sm/[1.2] lg:text-base/[1.2]" rows={3} placeholder="Please leave a name, contact email or number, and a brief overview of your enquiry." />
 
                       <button type="submit" className="bg-orange text-white p-2 px-4 rounded-full inline-block">Send Message</button>
                     </form>

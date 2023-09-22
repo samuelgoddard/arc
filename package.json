@@ -26,6 +26,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@portabletext/react": "^3.0.7",
     "@sanity/block-content-to-react": "^3.0.0",
     "@studio-freight/lenis": "^1.0.14",
     "@studio-freight/react-lenis": "^0.0.20",

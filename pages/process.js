@@ -121,7 +121,7 @@ export default function Process(initialData) {
                       return (
                         <div key={i} className={`col-span-3 lg:col-span-1 mb-6 lg:mb-0 border-b lg:border-b-0 border-black pb-3 lg:pb-0 bg-light-orange ${ i+1 == process.theResponseItems.length ? '' : 'lg:border-r' }`}>
                           {e.image && (
-                            <div className="w-1/2 h-[41vw] lg:h-[14.7vw] my-12 lg:mt-[5vw] mb-[6vw] bg-light-orange relative overflow-hidden">
+                            <div className="w-[70%] h-[55vw] lg:h-[17.7vw] my-12 lg:mt-[5vw] mb-[6vw] bg-light-orange relative overflow-hidden mx-auto">
                               <SanityImage
                                 image={e.image}
                                 className="mix-blend-multiply scale-[1.003] bg-light-orange"

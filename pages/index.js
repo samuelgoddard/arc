@@ -124,7 +124,7 @@ export default function Home(initialData) {
                     {home.missionItems.map((e,i) => {
                       return (
                         <div key={i} className={`col-span-3 lg:col-span-1 mb-6 lg:mb-0 border-b lg:border-b-0 border-black pb-3 lg:pb-0 ${ i+1 == home.missionItems.length ? '' : 'lg:border-r' }`}>
-                          <span className="w-8 h-8 lg:w-10 lg:h-10 bg-black rounded-full flex items-center justify-center text-off-white text-lg lg:text-xl mb-3 lg:mb-[5vw]">{i+1}</span>
+                          <span className="w-8 h-8 lg:w-10 lg:h-10 bg-black rounded-full flex items-center justify-center text-off-white text-lg lg:text-xl mb-3 lg:mb-[5vw]">{i+2}</span>
 
                           {e.image && (
                             <div className="w-[45%] lg:w-[40%] h-[60vw] lg:h-[20vw] my-12 lg:mt-[5vw] mb-[5vw] bg-off-white relative overflow-hidden">
