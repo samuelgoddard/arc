@@ -83,7 +83,7 @@ export default function Header({ colorTheme }) {
                     <p className="w-[90%] mb-3 lg:mb-5">We&apos;re here to help! If you have any questions, comments, or requests, please don&apos;t hesitate to contact us. You can reach us by any of the methods below. We&apos;ll get back to you as soon as possible.</p>
 
                     <p className="w-[90%] mb-3 lg:mb-5"><strong>Email Us</strong>: <a href="mailto:hello@arcdesignstudio.co.uk" className="hover:text-orange focus-visible:text-orange">hello@arcdesignstudio.co.uk</a></p>
-                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Phone number</strong>: <a href="tel:01234567890" className="hover:text-orange focus-visible:text-orange">0115 697 9149</a></p>
+                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Phone number</strong>: <a href="tel:01156979149" className="hover:text-orange focus-visible:text-orange">0115 697 9149</a></p>
                     <p className="w-[90%] mb-3 lg:mb-5"><strong>Address</strong>: ARC Space, Western House, Nottingham, NG1 3AZ</p>
                   </div>
 
