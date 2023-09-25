@@ -95,5 +95,13 @@ html.lenis {
 
 .mix{
   -webkit-backface-visibility: visible;
-    backface-visibility: visible;
-    }
+  backface-visibility: visible;
+}
+
+.rounded-fix {
+  isolation: isolate!important;
+  will-change: transform!important;
+  z-index: 0!important;
+  transform: translateZ(0) !important;
+  mask-image: radial-gradient(white, black);
+}

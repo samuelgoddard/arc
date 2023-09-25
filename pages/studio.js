@@ -57,7 +57,7 @@ export default function Studio(initialData) {
                     return (
                       <div key={i} className={`col-span-3 lg:col-span-1 border-b border-black pb-3 lg:pb-0 group ${ (((i+1)%3) === 0) ? '' : 'lg:border-r' } ${i == 6 || i == 7 ? 'lg:border-b-0' : '' } ${i+1 == 8 ? 'border-b-0' : '' }`}>
                         <div className={`mb-3 lg:mb-[7vw] py-2 ${i == 0 || i == 3 || i == 6 ? 'lg:p-2 lg:pl-0' : 'lg:p-2' } ${i == 2 || i == 5 ? 'lg:pr-0 ' : '' }`}>
-                          <div className={`w-full h-[60vw] lg:h-[22vw] bg-black/25 ${shape} relative overflow-hidden will-change-transform group-hover:bg-orange transition-all ease-custom duration-[450ms]`}>
+                          <div className={`w-full h-[60vw] lg:h-[22vw] bg-black/25 ${shape} relative overflow-hidden will-change-transform group-hover:bg-orange transition-all ease-custom duration-[450ms] rounded-fix`}>
                             {e.image && (
                               <>
                               <SanityImage image={e.image} alt={`Portrait of ${e.name}`} className="grayscale mix-blend-multiply" />

@@ -83,7 +83,7 @@ export default function Header({ colorTheme }) {
                     <p className="w-[90%] mb-3 lg:mb-5">We&apos;re here to help! If you have any questions, comments, or requests, please don&apos;t hesitate to contact us. You can reach us by any of the methods below. We&apos;ll get back to you as soon as possible.</p>
 
                     <p className="w-[90%] mb-3 lg:mb-5"><strong>Email Us</strong>: <a href="mailto:hello@arcdesignstudio.co.uk" className="hover:text-orange focus-visible:text-orange">hello@arcdesignstudio.co.uk</a></p>
-                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Phone number</strong>: <a href="tel:01234567890" className="hover:text-orange focus-visible:text-orange">01234 567 890</a></p>
+                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Phone number</strong>: <a href="tel:01234567890" className="hover:text-orange focus-visible:text-orange">0115 697 9149</a></p>
                     <p className="w-[90%] mb-3 lg:mb-5"><strong>Address</strong>: ARC Space, Western House, Nottingham, NG1 3AZ</p>
                   </div>
 
@@ -197,7 +197,7 @@ export default function Header({ colorTheme }) {
                     animate={{ y: 0, transition: { duration: 0.55, delay: 0.1, ease: [0.71,0,0.17,1] }}}
                     exit={{ y: 0, transition: { duration: 0.55, ease: [0.71,0,0.17,1] }}}
                   >
-                    <a href="mailto:enquiry@arcdesignstudio.co.uk" className="block text-[6.5vw]/[1]">Email</a>
+                    <a href="mailto:hello@arcdesignstudio.co.uk" className="block text-[6.5vw]/[1]">Email</a>
                   </m.div>
                 </div>
                 
@@ -207,7 +207,7 @@ export default function Header({ colorTheme }) {
                     animate={{ y: 0, transition: { duration: 0.55, delay: 0.1, ease: [0.71,0,0.17,1] }}}
                     exit={{ y: 0, transition: { duration: 0.55, ease: [0.71,0,0.17,1] }}}
                   >
-                    <a href="https://www.instagram.com/arc_ds/" target="_blank" rel="noopener noreferrer" className="block text-[6.5vw]/[1]">Instagram</a>
+                    <a href="https://www.instagram.com/arc_ds/?hl=en" target="_blank" rel="noopener noreferrer" className="block text-[6.5vw]/[1]">Instagram</a>
                   </m.div>
                 </div>
               </div>

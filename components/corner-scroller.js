@@ -19,8 +19,8 @@ export default function CornerScroller({image, height, layout, offset, amount, o
   layout == 'bottomRight' && ( layoutStyle = { borderBottomRightRadius: y, borderTopLeftRadius: 0, borderTopRightRadius: 0 } )
   layout == 'bottomLeft' && ( layoutStyle = { borderBottomLeftRadius: y, borderTopLeftRadius: 0, borderTopRightRadius: 0 } )
   return(
-    <div className="mix-blend-multiply relative z-[0]">
-      <m.div ref={ref} style={layoutStyle} className={`relative z-[0] overflow-hidden will-change-transform ${height} ${ orange ? 'bg-orange' : 'bg-black/10'} `}>
+    <div className="mix-blend-multiply relative z-[10]">
+      <m.div ref={ref} style={layoutStyle} className={`relative z-[100] overflow-hidden will-change-transform rounded-fix ${height} ${ orange ? 'bg-orange' : 'bg-black/10'} `}>
         <m.div style={{scale: scale}} className="w-full h-full absolute z-[0] inset-0 mix-blend-multiply">
           <SanityImage
             image={image}
