@@ -8,10 +8,10 @@ import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Privacy() {
+export default function ErrorPage() {
   return (
     <Layout>
-      <NextSeo title="Privacy Policy" />
+      <NextSeo title="404 Page Not Found" />
       
       <LazyMotion features={domAnimation}>
         <m.div

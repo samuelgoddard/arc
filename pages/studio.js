@@ -78,6 +78,30 @@ export default function Studio(initialData) {
                       </div>
                     )
                   })}
+
+                  <div className={`col-span-3 lg:col-span-1 border-t lg:border-t-0 lg:border-r border-black pb-3 lg:pb-0 group`}>
+                    <div className="w-full p-2 h-full flex flex-wrap">
+                      <div className="mb-12 lg:mb-auto w-10/12 h-[33vw] lg:h-[22vw] flex items-end">
+                        <div>
+                          <p className={`text-2xl lg:text-3xl mb-2`}><strong>ARC Alumni</strong></p>
+                          <p className="text-base/[1.2]">{studio.alumniText}</p>
+                        </div>
+                      </div>
+
+                      <div className="mt-auto w-full lg:pt-[7vw]">
+                        {studio.alumni?.map((e,i) => {
+                          return (
+                            <div key={i} className="flex mb-1">
+                              <p className={`text-base/[1.2]`}><strong>{e.name}</strong></p>
+                              {e.jobTitle && (
+                                <p className="text-base/[1.2] text-black text-opacity-60 ml-auto text-right">{e.jobTitle}</p>
+                              )}
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="relative w-full mb-3 border-b border-black pb-3">

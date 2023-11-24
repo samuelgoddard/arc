@@ -87,6 +87,11 @@ export const studioQuery = `{
         },
       }
     },
+    alumniText,
+    alumni[] {
+      name,
+      jobTitle,
+    },
     theSpaceHeading,
     theSpaceText,
     theSpaceImage {
