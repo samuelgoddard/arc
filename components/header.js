@@ -83,8 +83,11 @@ export default function Header({ colorTheme }) {
                     <p className="w-[90%] mb-3 lg:mb-5">We&apos;re here to help! If you have any questions, comments, or requests, please don&apos;t hesitate to contact us. You can reach us by any of the methods below. We&apos;ll get back to you as soon as possible.</p>
 
                     <p className="w-[90%] mb-3 lg:mb-5"><strong>Email Us</strong>: <a href="mailto:hello@arcdesignstudio.co.uk" className="hover:text-orange focus-visible:text-orange">hello@arcdesignstudio.co.uk</a></p>
-                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Phone number</strong>: <a href="tel:01156979149" className="hover:text-orange focus-visible:text-orange">0115 697 9149</a></p>
-                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Address</strong>: ARC Space, Western House, Nottingham, NG1 3AZ</p>
+                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Phone number</strong><br/>Nottingham - <a href="tel:01156979149" className="hover:text-orange focus-visible:text-orange">0115 697 9149</a><br/>London - <a href="tel:02045666395" className="hover:text-orange focus-visible:text-orange">0204 566 6395</a></p>
+                    <p className="w-[90%] mb-3 lg:mb-5"><strong>Address</strong> 
+                    <br/>Nottingham - ARC Space, Western House, Nottingham, NG1 3AZ
+                    <br/>London - Clerkenwell Workshops, Clerkenwell, EC1R 0AT
+                    </p>
                   </div>
 
                   <div className="mt-auto">
@@ -101,14 +104,28 @@ export default function Header({ colorTheme }) {
                     </form>
                   </div>
                 </div>
-                <div className="col-span-2 lg:col-span-1 hidden lg:block bg-black/10">
-                  <Image
-                    src="/images/map.jpg"
-                    width={970/2}
-                    height={1158/2}
-                    quality={50}
-                    className="w-full"
-                  />
+                <div className="col-span-2 lg:col-span-1 hidden lg:block bg-white ">
+                  <div className="w-full h-full flex flex-col">
+                    <div className="w-full h-[50%] relative overflow-hidden mb-4">
+                      <span className="absolute bottom-0 left-0 bg-orange block z-10 px-2 py-1 text-white">Nottingham</span>
+                      <Image
+                        src="/images/nott-map.png"
+                        fill
+                        quality={70}
+                        className="w-full absolute inset-0 object-cover object-center"
+                      />
+                    </div>
+                    
+                    <div className="w-full h-[50%] relative overflow-hidden">
+                      <span className="absolute bottom-0 left-0 bg-orange block z-10 px-2 py-1 text-white">London</span>
+                      <Image
+                        src="/images/lon-map.png"
+                        fill
+                        quality={70}
+                        className="w-full absolute inset-0 object-cover object-center"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </m.div>

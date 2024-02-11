@@ -62,6 +62,30 @@ export const homeQuery = `{
   },
   "contact": *[_type == "contact"][0]{
     companyName,
+    address,
+    addressMapImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    addressLondon,
+    addressLononMapImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     companyNumber
   }
 }`
@@ -114,6 +138,30 @@ export const studioQuery = `{
   },
   "contact": *[_type == "contact"][0]{
     companyName,
+    address,
+    addressMapImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    addressLondon,
+    addressLononMapImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     companyNumber
   }
 }`
@@ -177,6 +225,30 @@ export const processQuery = `{
   },
   "contact": *[_type == "contact"][0]{
     companyName,
+    address,
+    addressMapImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    addressLondon,
+    addressLononMapImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     companyNumber
   }
 }`
@@ -205,6 +277,30 @@ export const privacyQuery = `{
   },
   "contact": *[_type == "contact"][0]{
     companyName,
+    address,
+    addressMapImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    addressLondon,
+    addressLononMapImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
     companyNumber
   }
 }`
