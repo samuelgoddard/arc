@@ -46,6 +46,7 @@ export default function Projects(initialData) {
                   {projects.map((e, i) => {
                     return (
                       <Project
+                        key={i}
                         i={i}
                         title={e.title}
                         images={[{ image: ''}, { image: ''}, { image: '' }]}
