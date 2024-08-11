@@ -14,7 +14,7 @@ export default function Project({ title, images, type, tags, price, description,
               i == 0 && (color = '#D1C4B3')
               i == 1 && (color = '#BDD1B3')
               return (
-                <span className="p-1 font-mono uppercase text-xs/none inline-block" style={{ backgroundColor: color}}>{e.title}</span>
+                <span key={i} className="p-1 font-mono uppercase text-xs/none inline-block" style={{ backgroundColor: color}}>{e.title}</span>
               )
             })}
           </div>
