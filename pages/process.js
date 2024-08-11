@@ -11,10 +11,15 @@ import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
 import Orbit from '@/components/orbit'
 import CornerScroller from '@/components/corner-scroller'
+import { useState } from 'react'
+import { processServices } from '@/helpers/projects'
 const pageService = new SanityPageService(processQuery)
 
 export default function Process(initialData) {
   const { data: { process, contact }  } = pageService.getPreviewHook(initialData)()
+
+  const [currentService, setCurrentService] = useState('Strategic Definition')
+
   return (
     <Layout>
       <NextSeo title={process.title} />
@@ -59,11 +64,54 @@ export default function Process(initialData) {
                       /> */}
                     </div>
 
-                    <div className="col-span-2 lg:col-span-1 flex lg:items-center lg:justify-center">
-                      <div className="w-11/12 lg:w-8/12 max-w-[500px]">
+                    <div className="col-span-2 lg:col-span-1 flex flex-wrap lg:items-center lg:justify-center">
+                      <div className="w-11/12 lg:w-8/12 max-w-[500px] mb-6 lg:mb-0">
                         <span className="bg-black/10 p-1 font-mono uppercase text-xs/none mb-6 lg:mb-10 inline-block">Our View</span>
                         <div className="content mb-6 lg:mb-10 indent-12">
                           <p>{process.ourViewText}</p>
+                        </div>
+                      </div>
+
+                      <div className="w-full lg:w-10/12 lg:ml-auto mb-auto">
+                        <div className="flex space-x-3 w-full items-end mb-3">
+                          <div className="w-[90px] lg:w-[100px] relative z-[10] opacity-1 bg-light-orange">
+                            <Image
+                              src="/images/riba.jpg"
+                              width={174}
+                              height={82}
+                              className="w-full relative z-[10] mix-blend-color-burn"
+                              quality={30}
+                              alt="RIBA accrediation logo"
+                              priority
+                            />
+                          </div>
+                          
+                          <p className="text-xs/[1]">We provide a complete service:</p>
+                        </div>
+                        
+                        <div className="grid grid-cols-4 gap-1.5 lg:w-[85%]">
+                          {processServices.map((e,i) => {
+                            return (
+                              <button key={i} onMouseEnter={ () => setCurrentService(e.title)} className="col-span-2 xl:col-span-1 bg-[#D6C6B7] p-1.5 flex flex-wrap text-left transition-all ease-custom duration-300 hover:bg-orange hover:text-[#D8D8CD] border-r-4 group border-r-[#D6C6B7] hover:border-r-black">
+                                <span className="block"><span className="w-[23px] h-[23px] bg-[#C9AB8F] rounded-full flex items-center justify-center text-[#D8D8CD] mb-6 group-hover:bg-black transition-colors ease-custom duration-300">{i}</span></span>
+                                <span className="block text-sm/[1.125] w-full mt-auto">{e.title}</span>
+                              </button>
+                            )
+                          })}
+                        
+                          <div className="col-span-4 mt-8 lg:mt-10 mb-3">
+                            {processServices.map((e,i) => {
+                              return (
+                                <div key={i} className={currentService == e.title ? 'block' : 'hidden' }>
+                                  <span className="bg-black/10 p-1 font-mono uppercase text-xs/none mb-3 lg:mb-3 inline-block">{e.title}</span>
+
+                                  <div className="content">
+                                    <p>{e.text}</p>
+                                  </div>
+                                </div>
+                              )
+                            })}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -77,7 +125,7 @@ export default function Process(initialData) {
 
                     <h2 className="text-[8vw]/[0.95] lg:text-[4.5vw]/[0.95] w-[90%] lg:w-[50%] mb-5 lg:mb-8 pb-0">{process.theNetworkHeading}</h2>
 
-                    <div className="w-full flex flex-wrap items-start">
+                    <div className="w-full flex flex-wrap items-start mb-12 lg:mb-0">
                       <div className="w-full lg:w-5/12 order-2 lg:order-1 lg:pb-[15vw]">
                         <div className="content mb-6 lg:mb-10 indent-12 w-[85%] lg:w-[80%] max-w-[550px]">
                           <p>{process.theNetworkText}</p>
@@ -106,6 +154,45 @@ export default function Process(initialData) {
                           className="w-full"
                         /> */}
                     </div>
+
+                    <div className="w-full pb-0">
+                      <div className="relative w-full">
+                        <span className="bg-black/10 p-1 font-mono uppercase text-xs/none mb-3 inline-block">Teams we work with</span>
+                        
+                        <div className="content mb-3 lg:mb-5">
+                          <p className="w-1/2 max-w-[450px]">As Architects, the output of our trade is typically a portfolio of built projects - many of which will still be standing long after our own lifetimes. As such, we feel that it is our responsibility to consider the long term.</p>
+                        </div>
+
+                        <div className="relative flex overflow-x-hidden">
+                          <div className="animate-marquee whitespace-nowrap">
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                          </div>
+
+                          <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
                   </div>
                 </div>
 
@@ -121,7 +208,7 @@ export default function Process(initialData) {
                       return (
                         <div key={i} className={`col-span-3 lg:col-span-1 mb-6 lg:mb-0 border-b lg:border-b-0 border-black pb-3 lg:pb-0 bg-light-orange ${ i+1 == process.theResponseItems.length ? '' : 'lg:border-r' }`}>
                           {e.image && (
-                            <div className="w-[70%] h-[55vw] lg:h-[17.7vw] my-12 lg:mt-[5vw] mb-[6vw] bg-light-orange relative overflow-hidden mx-auto">
+                            <div className="w-[80%] h-[55vw] lg:h-[20vw] my-12 lg:mt-[5vw] mb-[6vw] bg-light-orange relative overflow-hidden mx-auto">
                               <SanityImage
                                 image={e.image}
                                 className="mix-blend-multiply scale-[1.003] bg-light-orange"

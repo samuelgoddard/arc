@@ -19,6 +19,10 @@ export default function App({ Component, pageProps }) {
     colorTheme = 'text-black bg-light-orange selection:bg-black selection:text-light-orange' 
   )
 
+  router.asPath == '/projects' && (
+    colorTheme = 'text-black bg-white selection:bg-black selection:text-white' 
+  )
+
   return (
     <ReactLenis root options={{ lerp: 0.125 }}>
       <DefaultSeo {...SEO} /> 

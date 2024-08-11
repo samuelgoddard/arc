@@ -5,13 +5,13 @@
   }
 
   & > ul {
-    @apply mb-5 last-of-type:mb-0 text-base/[1.2];
+    @apply mt-5 mb-5 last-of-type:mb-0 text-base/[1.2];
 
     li {
       &::before {
         content: '- '
       }
-      @apply mb-2 block;
+      @apply mb-0 block;
     }
   }
 

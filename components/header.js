@@ -44,6 +44,8 @@ export default function Header({ colorTheme }) {
 
             <nav className="ml-auto flex space-x-1 text-base/none lg:text-xl/none  w-auto">
               <FancyLink destination="/" a11yText="Navigate to the home page" active={router.asPath == '/'} label="Overview," className="hidden lg:block" />
+              
+              <FancyLink destination="/projects" a11yText="Navigate to the projects page" active={router.asPath == '/projects'} label="Projects," className="hidden lg:block" />
 
               <FancyLink destination="/studio" a11yText="Navigate to the studio page" active={router.asPath == '/studio'} label="Studio," className="hidden lg:block" />
 
@@ -165,7 +167,20 @@ export default function Header({ colorTheme }) {
                       {router.asPath == '/' && (
                         <span className="block absolute top-[50%] right-3 w-2 h-2 rounded-full bg-black"></span>
                       )}
-                      <FancyLink onClick={menuToggle} destination="/" a11yText="Navigate to the home page" label="Overview" className="block text-[17vw]/[1] w-full text-left" />
+                      <FancyLink onClick={menuToggle} destination="/" a11yText="Navigate to the home page" label="Overview" className="block text-[15vw]/[1.125] w-full text-left" />
+                    </m.div>
+                  </div>
+
+                  <div className="overflow-hidden relative border-b border-black">
+                    <m.div
+                      initial={{ y: '100%' }}
+                      animate={{ y: 0, transition: { duration: 0.55, delay: 0.1, ease: [0.71,0,0.17,1] }}}
+                      exit={{ y: 0, transition: { duration: 0.55, ease: [0.71,0,0.17,1] }}}
+                    >
+                      {router.asPath == '/projects' && (
+                        <span className="block absolute top-[50%] right-3 w-2 h-2 rounded-full bg-black"></span>
+                      )}
+                      <FancyLink onClick={menuToggle} destination="/projects" a11yText="Navigate to the projects page" label="Projects" className="block text-[15vw]/[1.125] w-full text-left" />
                     </m.div>
                   </div>
 
@@ -178,7 +193,7 @@ export default function Header({ colorTheme }) {
                       {router.asPath == '/studio' && (
                         <span className="block absolute top-[50%] right-3 w-2 h-2 rounded-full bg-black"></span>
                       )}
-                      <FancyLink onClick={menuToggle} destination="/studio" a11yText="Navigate to the studio page" label="Studio" className="block text-[17vw]/[1] w-full text-left" />
+                      <FancyLink onClick={menuToggle} destination="/studio" a11yText="Navigate to the studio page" label="Studio" className="block text-[15vw]/[1.125] w-full text-left" />
                     </m.div>
                   </div>
 
@@ -191,7 +206,7 @@ export default function Header({ colorTheme }) {
                       {router.asPath == '/process' && (
                         <span className="block absolute top-[50%] right-3 w-2 h-2 rounded-full bg-black"></span>
                       )}
-                      <FancyLink onClick={menuToggle} destination="/process" a11yText="Navigate to the process page" label="Process" className="block text-[17vw]/[1] w-full text-left" />
+                      <FancyLink onClick={menuToggle} destination="/process" a11yText="Navigate to the process page" label="Process" className="block text-[15vw]/[1.125] w-full text-left" />
                     </m.div>
                   </div>
 
@@ -201,7 +216,7 @@ export default function Header({ colorTheme }) {
                       animate={{ y: 0, transition: { duration: 0.55, delay: 0.1, ease: [0.71,0,0.17,1] }}}
                       exit={{ y: 0, transition: { duration: 0.55, ease: [0.71,0,0.17,1] }}}
                     >
-                      <button className="block text-[17vw]/[1] w-full text-left" onClick={contactToggle}>Contact</button>
+                      <button className="block text-[15vw]/[1.125] w-full text-left" onClick={contactToggle}>Contact</button>
                     </m.div>
                   </div>
                 </nav>

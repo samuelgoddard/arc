@@ -81,7 +81,8 @@ html.lenis {
 }
 
 .triangle {
-  clip-path: polygon(50% 0%, 100% 100%, 0 100%);
+  clip-path: polygon(50% 0%, 112% 0%, 62% 100%, 0 100%);
+
 }
 
 @keyframes fadeIn {
