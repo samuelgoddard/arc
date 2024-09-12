@@ -39,6 +39,17 @@ export const homeQuery = `{
           y
         },
       },
+      shapeImage {
+        asset-> {
+          ...
+        },
+        caption,
+        alt,
+        hotspot {
+          x,
+          y
+        },
+      },
       title,
       text
     },
@@ -274,6 +285,55 @@ export const privacyQuery = `{
         asset->
       }
     },
+  },
+  "contact": *[_type == "contact"][0]{
+    companyName,
+    address,
+    addressMapImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    addressLondon,
+    addressLononMapImage {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    },
+    companyNumber
+  }
+}`
+
+export const projectsQuery = `{
+  "projects": *[_type == "project"] | order(orderRank asc){
+    orderRank,
+    title,
+    text,
+    tags[],
+    meta[],
+    images[] {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
+    }
   },
   "contact": *[_type == "contact"][0]{
     companyName,

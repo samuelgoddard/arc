@@ -6,16 +6,15 @@ import { LazyMotion, domAnimation, m, useWillChange } from 'framer-motion'
 import IconLogo from '@/icons/logo.svg'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
-import { studioQuery } from '@/helpers/queries'
+import { projectsQuery } from '@/helpers/queries'
 import SanityPageService from '@/services/sanityPageService'
 import SanityImage from '@/components/sanity-image'
 import CornerScroller from '@/components/corner-scroller'
-import { projects } from '@/helpers/projects'
 import Project from '@/components/project'
-const pageService = new SanityPageService(studioQuery)
+const pageService = new SanityPageService(projectsQuery)
 
 export default function Projects(initialData) {
-  const { data: { studio, contact }  } = pageService.getPreviewHook(initialData)()
+  const { data: { projects, contact }  } = pageService.getPreviewHook(initialData)()
   return (
     <Layout>
       <NextSeo title={"Projects"} />
@@ -49,10 +48,36 @@ export default function Projects(initialData) {
                         key={i}
                         i={i}
                         title={e.title}
-                        images={[{ image: ''}, { image: ''}, { image: '' }]}
+                        images={e.images}
                         tags={e.tags}
-                        price={e.price}
-                        type={e.type}
+                        text={e.text}
+                        meta={e.meta}
+                      />
+                    )
+                  })}
+                  {projects.map((e, i) => {
+                    return (
+                      <Project
+                        key={i}
+                        i={i}
+                        title={e.title}
+                        images={e.images}
+                        tags={e.tags}
+                        text={e.text}
+                        meta={e.meta}
+                      />
+                    )
+                  })}
+                  {projects.map((e, i) => {
+                    return (
+                      <Project
+                        key={i}
+                        i={i}
+                        title={e.title}
+                        images={e.images}
+                        tags={e.tags}
+                        text={e.text}
+                        meta={e.meta}
                       />
                     )
                   })}

@@ -126,11 +126,11 @@ export default function Home(initialData) {
                   <div className="grid grid-cols-3 lg:gap-3 mb-12 lg:mb-[7vw]">
                     {home.missionItems.map((e,i) => {
                       return (
-                        <div key={i} className={`col-span-3 lg:col-span-1 mb-6 lg:mb-0 border-b lg:border-b-0 border-black pb-3 lg:pb-0 ${ i+1 == home.missionItems.length ? '' : 'lg:border-r' }`}>
+                        <div key={i} className={`col-span-3 lg:col-span-1 mb-6 lg:mb-0 border-b lg:border-b-0 border-black pb-3 lg:pb-0 relative ${ i+1 == home.missionItems.length ? '' : 'lg:border-r' }`}>
                           <span className="w-8 h-8 lg:w-10 lg:h-10 bg-black rounded-full flex items-center justify-center text-off-white text-lg lg:text-xl mb-3 lg:mb-[5vw]">{i+2}</span>
 
                           {e.image && (
-                            <div className="w-[45%] lg:w-[40%] h-[60vw] lg:h-[20vw] my-12 lg:mt-[5vw] mb-[5vw] bg-off-white relative overflow-hidden">
+                            <div className="w-[20%] lg:w-[20%] h-[29vw] lg:h-[10vw] my-12 mt-[10vw] lg:mt-[8vw] lg:mb-0 bg-off-white relative overflow-hidden">
                               <SanityImage
                                 image={e.image}
                                 className="mix-blend-multiply scale-[1.003] bg-off-red"
@@ -139,7 +139,17 @@ export default function Home(initialData) {
                             </div>
                           )}
 
-                          <div className="w-10/12">
+                          {e.shapeImage && (
+                            <div className="w-[60%] lg:w-2/3 aspect-square absolute top-0 right-0 rounded-bl-full overflow-hidden">
+                              <SanityImage
+                                image={e.shapeImage}
+                                className="mix-blend-multiply scale-[1.003] grayscale"
+                                noBg
+                              />
+                            </div>
+                          )}
+
+                          <div className="w-11/12 md:mt-[9vw] lg:mt-6">
                             <p className="text-lg lg:text-xl mb-3"><strong>{e.title}</strong></p>
                             
                             <p className="text-base/[1.2]">{e.text}</p>

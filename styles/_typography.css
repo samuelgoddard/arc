@@ -1,10 +1,17 @@
 /* Content Stylings */
 .content {
-  & > p {
+  & p {
     @apply mb-5 last-of-type:mb-0 text-base/[1.2];
+
+    & strong {
+      @apply font-semibold;
+    }
+    & em {
+      @apply italic;
+    }
   }
 
-  & > ul {
+  & ul {
     @apply mt-5 mb-5 last-of-type:mb-0 text-base/[1.2];
 
     li {
@@ -15,8 +22,8 @@
     }
   }
 
-  & > p > a {
-    @apply underline hover:text-opacity-25 focus:text-opacity-25;
+  & p > a {
+    @apply underline hover:text-orange focus:text-orange;
   }
 
   & > h1, & > .h1 {

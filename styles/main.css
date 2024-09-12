@@ -81,7 +81,7 @@ html.lenis {
 }
 
 .triangle {
-  clip-path: polygon(50% 0%, 112% 0%, 62% 100%, 0 100%);
+  clip-path: polygon(50% 0%, 125% 0%, 80% 100%, 5% 100%);
 
 }
 
