@@ -59,7 +59,7 @@ export default function Projects(initialData) {
                     return (
                       <Project
                         key={i}
-                        i={i}
+                        i={projects.length + i}
                         title={e.title}
                         images={e.images}
                         tags={e.tags}
@@ -72,7 +72,7 @@ export default function Projects(initialData) {
                     return (
                       <Project
                         key={i}
-                        i={i}
+                        i={(projects.length * 2) + i}
                         title={e.title}
                         images={e.images}
                         tags={e.tags}
