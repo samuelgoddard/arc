@@ -4,7 +4,6 @@ import Container from '@/components/container'
 import { fade } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
-import Link from 'next/link'
 import Image from 'next/image'
 import { processQuery } from '@/helpers/queries'
 import SanityPageService from '@/services/sanityPageService'
@@ -90,7 +89,7 @@ export default function Process(initialData) {
                         </div>
                         
                         <div className="grid grid-cols-4 gap-1.5 lg:w-[85%]">
-                          {processServices.map((e,i) => {
+                          {process.ourViewServices.map((e,i) => {
                             return (
                               <button key={i} onMouseEnter={ () => setCurrentService(e.title)} className="col-span-2 xl:col-span-1 bg-[#D6C6B7] p-1.5 flex flex-wrap text-left transition-all ease-custom duration-300 hover:bg-orange hover:text-[#D8D8CD] border-r-4 group border-r-[#D6C6B7] hover:border-r-black">
                                 <span className="block"><span className="w-[23px] h-[23px] bg-[#C9AB8F] rounded-full flex items-center justify-center text-[#D8D8CD] mb-6 group-hover:bg-black transition-colors ease-custom duration-300">{i}</span></span>
@@ -100,7 +99,7 @@ export default function Process(initialData) {
                           })}
                         
                           <div className="col-span-4 mt-8 lg:mt-10 mb-3">
-                            {processServices.map((e,i) => {
+                            {process.ourViewServices.map((e,i) => {
                               return (
                                 <div key={i} className={currentService == e.title ? 'block' : 'hidden' }>
                                   <span className="bg-black/10 p-1 font-mono uppercase text-xs/none mb-3 lg:mb-3 inline-block">{e.title}</span>
@@ -157,37 +156,43 @@ export default function Process(initialData) {
 
                     <div className="w-full pb-0">
                       <div className="relative w-full">
-                        <span className="bg-black/10 p-1 font-mono uppercase text-xs/none mb-3 inline-block">Teams we work with</span>
-                        
-                        <div className="content mb-3 lg:mb-5">
-                          <p className="w-1/2 max-w-[450px]">As Architects, the output of our trade is typically a portfolio of built projects - many of which will still be standing long after our own lifetimes. As such, we feel that it is our responsibility to consider the long term.</p>
-                        </div>
+                        { process.teamsWeWorkWithText && (
+                          <>
+                            <span className="bg-black/10 p-1 font-mono uppercase text-xs/none mb-3 inline-block">Teams we work with</span>
+                            
+                            <div className="content mb-3 lg:mb-5">
+                              <p className="w-1/2 max-w-[450px]">{process.teamsWeWorkWithText}</p>
+                            </div>
+                          </>
+                        )}
 
                         <div className="relative flex overflow-x-hidden">
                           <div className="animate-marquee whitespace-nowrap">
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            { process.teamsWeWorkWithLogos.map((e, i) => {
+                              return (
+                                <span key={i} className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2">
+                                  <img
+                                    src={e.asset.url}
+                                    alt={`Company Logo`}
+                                    className="block w-1/2"
+                                  />
+                                </span>
+                              )
+                            })}
                           </div>
 
                           <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
-                            <span className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2"><span className="block w-[33%] aspect-square bg-black/75"></span></span>
+                            { process.teamsWeWorkWithLogos.map((e, i) => {
+                              return (
+                                <span key={i} className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2">
+                                  <img
+                                    src={e.asset.url}
+                                    alt={`Company Logo`}
+                                    className="block w-1/2"
+                                  />
+                                </span>
+                              )
+                            })}
                           </div>
                         </div>
                       </div>

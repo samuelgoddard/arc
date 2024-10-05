@@ -1,50 +1,71 @@
 import { PortableText } from "@portabletext/react"
 import SanityImage from "./sanity-image"
-import { useState } from "react"
-import { AnimatePresence, m } from "framer-motion";
+import { useRef, useState } from "react"
+import { AnimatePresence, m, useScroll, useTransform } from "framer-motion";
 
 export default function Project({ title, images, tags, meta, text, i }) {
   const [index, setIndex] = useState(0);
-  let shape = 'rounded-bl-[100px] group-hover:rounded-bl-[0]'
-  i % 2 === 0 && (shape = 'rounded-br-[100px] group-hover:rounded-br-[0]')
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["-100vh", "200vh"]
+  })
+  const y = useTransform(scrollYProgress,[0, 1],['10vw', '50vw'],{ clamp: false })
+
+  const { scrollY } = useScroll()
+  const scale = useTransform(scrollY,[0, 750],[1, 1.025],{ clamp: false })
+
+  let layoutStyle = { borderTopLeftRadius: y }
+  
+  let shape = 'bottomLeft'
+  i % 2 === 0 && (shape = 'bottomRight')
+  
+  shape == 'bottomRight' && ( layoutStyle = { borderBottomRightRadius: y, borderTopLeftRadius: 0, borderTopRightRadius: 0 } )
+
+  shape == 'bottomLeft' && ( layoutStyle = { borderBottomLeftRadius: y, borderTopLeftRadius: 0, borderTopRightRadius: 0 } )
 
   return(
     <div className="mb-3 border-t border-black pt-3 [*>.test]:bg-red-400 even:flex-row-reverse flex flex-wrap group">
-      <div className={`w-full lg:w-2/3 h-[60vw] lg:h-[40vw] bg-black/25 shape ${shape} relative overflow-hidden will-change-transform transition-all ease-custom duration-[450ms] rounded-fix`}>
-        <AnimatePresence mode="sync">
+      <div className="lg:grayscale lg:opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all ease-in-out duration-[1000ms] w-full lg:w-2/3">
+        <m.div ref={ref} style={layoutStyle} className={`relative z-[100] overflow-hidden will-change-transform rounded-fix w-full h-[60vw] lg:h-[40vw]`}>
+          <m.div style={{scale: scale}} className="w-full h-full absolute z-[0] inset-0 mix-blend-multiply">
+            <AnimatePresence mode="sync">
+              {images?.map((e, i) => {
+                return index == i && (
+                  <m.div
+                    initial={{ opacity: 0, scale: 1.025, filter: "blur(10px)" }}
+                    animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, scale: 1.025, filter: "blur(10px)" }}
+                    transition={{ duration: 1, ease: [0.71,0,0.17,1] }}
+                    key={i}
+                    className="absolute inset-0"
+                  >
+                    <SanityImage
+                      image={e}
+                      alt={`Image of the project`}
+                      className="block w-full"
+                    />
+                  </m.div>
+                )
+              })}
+            </AnimatePresence>
+          </m.div>
+        </m.div>
+      
+
+        <div className={`gap-3 w-full mt-3 mb-8 lg:mb-[10vw] grid grid-cols-5 sm:grid-cols-4 lg:hidden ${i % 2 === 0 ? 'justify-start' : 'justify-end' }`}>
           {images?.map((e, i) => {
-            return index == i && (
-              <m.div
-                initial={{ opacity: 0, scale: 1.025, filter: "blur(10px)" }}
-                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0, scale: 1.025, filter: "blur(10px)" }}
-                transition={{ duration: 1, ease: [0.71,0,0.17,1] }}
-                key={i}
-                className="absolute inset-0"
-              >
+            return (
+              <button onClick={()=> setIndex(i)} key={i} className={`col-span-1 aspect-video bg-black/10 relative overflow-hidden transition-all ease-in-out duration-[600ms] ${i == index ? '' : 'grayscale opacity-50 hover:opacity-70' }`}>
                 <SanityImage
                   image={e}
                   alt={`Portrait of ${e.name}`}
                   className="block w-full"
                 />
-              </m.div>
+              </button>
             )
           })}
-        </AnimatePresence>
-      </div>
-
-      <div className={`gap-3 w-full mt-3 mb-8 lg:mb-[10vw] grid grid-cols-5 sm:grid-cols-4 lg:hidden ${i % 2 === 0 ? 'justify-start' : 'justify-end' }`}>
-        {images?.map((e, i) => {
-          return (
-            <button onClick={()=> setIndex(i)} key={i} className={`col-span-1 aspect-video bg-black/10 relative overflow-hidden transition-all ease-in-out duration-[600ms] ${i == index ? '' : 'grayscale opacity-50 hover:opacity-70' }`}>
-              <SanityImage
-                image={e}
-                alt={`Portrait of ${e.name}`}
-                className="block w-full"
-              />
-            </button>
-          )
-        })}
+        </div>
       </div>
 
       <div className={`w-full lg:w-1/3 lg:max-w-[500px] mr-auto py-3 lg:py-0 ${i % 2 === 0 ? 'lg:px-3' : 'lg:pr-3' }`}>
@@ -81,7 +102,7 @@ export default function Project({ title, images, tags, meta, text, i }) {
         </div>
       </div>
 
-      <div className={`lg:w-2/3 gap-3 grid-cols-5 sm:grid-cols-4 lg:grid-cols-7 w-full mt-3 lg:mb-[10vw] hidden lg:grid ${i % 2 === 0 ? 'justify-start' : 'justify-end' }`}>
+      <div className={`lg:w-2/3 gap-3 grid-cols-5 sm:grid-cols-4 lg:grid-cols-7 w-full mt-3 lg:mb-[10vw] hidden lg:grayscale lg:opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all ease-in-out duration-[1000ms] lg:grid ${i % 2 === 0 ? 'justify-start' : 'justify-end' }`}>
         {images?.map((e, i) => {
           return (
             <button onClick={()=> setIndex(i)} key={i} className={`col-span-1 aspect-video bg-black/10 relative overflow-hidden transition-all ease-in-out duration-[600ms] ${i == index ? '' : 'grayscale opacity-50 hover:opacity-70' }`}>

@@ -193,11 +193,27 @@ export const processQuery = `{
       },
     },
     ourViewText,
+    ourViewServices[] {
+      title,
+      text
+    },
     theNetworkHeading,
     theNetworkText,
     theNetworkListItems[] {
       title,
       department
+    },
+    teamsWeWorkWithText,
+    teamsWeWorkWithLogos[] {
+      asset-> {
+        ...
+      },
+      caption,
+      alt,
+      hotspot {
+        x,
+        y
+      },
     },
     theResponseHeading,
     theResponseItems[] {
