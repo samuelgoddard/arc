@@ -17,7 +17,8 @@ const checkIfSlugIsKnown = (slug) => {
     'home',
     'studio',
     'process',
-    'privacy'
+    'privacy',
+    'projects'
   ]
   return globalSlugs.includes(slug)
 }
