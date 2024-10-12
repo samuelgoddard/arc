@@ -48,7 +48,7 @@ export default function Projects(initialData) {
                         key={i}
                         i={i}
                         title={e.title}
-                        images={e.images}
+                        images={e.images ? e.images : null}
                         tags={e.tags}
                         text={e.text}
                         meta={e.meta}
@@ -61,7 +61,7 @@ export default function Projects(initialData) {
                         key={i}
                         i={projects.length + i}
                         title={e.title}
-                        images={e.images}
+                        images={e.images ? e.images : null}
                         tags={e.tags}
                         text={e.text}
                         meta={e.meta}
@@ -74,7 +74,7 @@ export default function Projects(initialData) {
                         key={i}
                         i={(projects.length * 2) + i}
                         title={e.title}
-                        images={e.images}
+                        images={e.images ? e.images : null}
                         tags={e.tags}
                         text={e.text}
                         meta={e.meta}

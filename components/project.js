@@ -29,6 +29,7 @@ export default function Project({ title, images, tags, meta, text, i }) {
       <div className="lg:grayscale lg:opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all ease-in-out duration-[1000ms] w-full lg:w-2/3">
         <m.div ref={ref} style={layoutStyle} className={`relative z-[100] overflow-hidden will-change-transform rounded-fix w-full h-[60vw] lg:h-[40vw]`}>
           <m.div style={{scale: scale}} className="w-full h-full absolute z-[0] inset-0 mix-blend-multiply">
+          {images && (
             <AnimatePresence mode="sync">
               {images?.map((e, i) => {
                 return index == i && (
@@ -40,32 +41,38 @@ export default function Project({ title, images, tags, meta, text, i }) {
                     key={i}
                     className="absolute inset-0"
                   >
-                    <SanityImage
-                      image={e}
-                      alt={`Image of the project`}
-                      className="block w-full"
-                    />
+                    {e && (
+                      <SanityImage
+                        image={e}
+                        alt={`Image of the project`}
+                        className="block w-full"
+                      />
+                    )}
                   </m.div>
                 )
               })}
             </AnimatePresence>
+          )}
           </m.div>
         </m.div>
       
-
+        { images && (
         <div className={`gap-3 w-full mt-3 mb-8 lg:mb-[10vw] grid grid-cols-5 sm:grid-cols-4 lg:hidden ${i % 2 === 0 ? 'justify-start' : 'justify-end' }`}>
           {images?.map((e, i) => {
             return (
               <button onClick={()=> setIndex(i)} key={i} className={`col-span-1 aspect-video bg-black/10 relative overflow-hidden transition-all ease-in-out duration-[600ms] ${i == index ? '' : 'grayscale opacity-50 hover:opacity-70' }`}>
-                <SanityImage
-                  image={e}
-                  alt={`Portrait of ${e.name}`}
-                  className="block w-full"
-                />
+                {e && (
+                  <SanityImage
+                    image={e}
+                    alt={`Portrait of ${e.name}`}
+                    className="block w-full"
+                  />
+                )}
               </button>
             )
           })}
         </div>
+        )}
       </div>
 
       <div className={`w-full lg:w-1/3 lg:max-w-[500px] mr-auto py-3 lg:py-0 ${i % 2 === 0 ? 'lg:px-3' : 'lg:pr-3' }`}>
@@ -106,11 +113,13 @@ export default function Project({ title, images, tags, meta, text, i }) {
         {images?.map((e, i) => {
           return (
             <button onClick={()=> setIndex(i)} key={i} className={`col-span-1 aspect-video bg-black/10 relative overflow-hidden transition-all ease-in-out duration-[600ms] ${i == index ? '' : 'grayscale opacity-50 hover:opacity-70' }`}>
-              <SanityImage
-                image={e}
-                alt={`Portrait of ${e.name}`}
-                className="block w-full"
-              />
+              { e && (
+                <SanityImage
+                  image={e}
+                  alt={`Portrait of ${e.name}`}
+                  className="block w-full"
+                />
+              )}
             </button>
           )
         })}
