@@ -2,6 +2,11 @@ export const homeQuery = `{
   "home": *[_type == "home"][0]{
     title,
     heroText,
+    heroVideo {
+      asset-> {
+        ...
+      }
+    },
     heroImage {
       asset-> {
         ...

@@ -34,7 +34,7 @@ export default function Home(initialData) {
                 <div className="absolute inset-0 w-full h-full flex items-start lg:items-center justify-center">
                   <div className="w-full h-[88%] lg:h-[88%] z-[1] triangle overflow-hidden bg-orange relative mt-10 lg:-mt-10 ml-2 lg:ml-3">
                     <div className="absolute inset-0 bg-orange opacity-90 z-[20] mix-blend-soft-light will-change-transform"></div>
-                    <Zoomer image={home.heroImage} />
+                    <Zoomer image={home.heroImage} video={home.heroVideo.asset.url} />
                   </div>
                 </div>
 

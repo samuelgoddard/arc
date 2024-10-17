@@ -174,7 +174,7 @@ export default function Process(initialData) {
                                   <img
                                     src={e.asset.url}
                                     alt={`Company Logo`}
-                                    className="block w-1/2"
+                                    className="block w-9/12 grayscale"
                                   />
                                 </span>
                               )
@@ -188,7 +188,7 @@ export default function Process(initialData) {
                                   <img
                                     src={e.asset.url}
                                     alt={`Company Logo`}
-                                    className="block w-1/2"
+                                    className="block w-9/12 grayscale"
                                   />
                                 </span>
                               )
