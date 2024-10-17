@@ -171,7 +171,9 @@ export default function Process(initialData) {
                             { process.teamsWeWorkWithLogos.map((e, i) => {
                               return (
                                 <span key={i} className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2">
-                                  <img
+                                  <Image
+                                    width={200}
+                                    height={200}
                                     src={e.asset.url}
                                     alt={`Company Logo`}
                                     className="block w-9/12 grayscale"
@@ -184,8 +186,10 @@ export default function Process(initialData) {
                           <div className="absolute top-0 animate-marquee2 whitespace-nowrap">
                             { process.teamsWeWorkWithLogos.map((e, i) => {
                               return (
-                                <span key={i} className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2">
-                                  <img
+                                <span key={i} className="w-[150px] lg:w-[175px] h-[150px] lg:h-[175px] bg-[#D6C6B7] inline-flex items-center justify-center mr-2 relative">
+                                  <Image
+                                    width={200}
+                                    height={200}
                                     src={e.asset.url}
                                     alt={`Company Logo`}
                                     className="block w-9/12 grayscale"
