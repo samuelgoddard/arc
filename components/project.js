@@ -12,9 +12,6 @@ export default function Project({ title, images, tags, meta, text, i }) {
   })
   const y = useTransform(scrollYProgress,[0, 1],['10vw', '50vw'],{ clamp: false })
 
-  const { scrollY } = useScroll()
-  const scale = useTransform(scrollY,[0, 750],[1, 1.025],{ clamp: false })
-
   let layoutStyle = { borderTopLeftRadius: y }
   
   let shape = 'bottomLeft'
@@ -28,7 +25,7 @@ export default function Project({ title, images, tags, meta, text, i }) {
     <div className="mb-3 border-t border-black pt-3 [*>.test]:bg-red-400 even:flex-row-reverse flex flex-wrap group">
       <div className="lg:grayscale lg:opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all ease-in-out duration-[1000ms] w-full lg:w-2/3">
         <m.div ref={ref} style={layoutStyle} className={`relative z-[100] overflow-hidden will-change-transform rounded-fix w-full h-[60vw] lg:h-[40vw]`}>
-          <m.div style={{scale: scale}} className="w-full h-full absolute z-[0] inset-0 mix-blend-multiply">
+          <m.div className="w-full h-full absolute z-[0] inset-0 mix-blend-multiply">
           {images && (
             <AnimatePresence mode="sync">
               {images?.map((e, i) => {
